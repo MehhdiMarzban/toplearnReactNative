@@ -4,7 +4,7 @@ const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
     },
     regularText: {
         fontFamily: "vazir",
@@ -15,6 +15,14 @@ const globalStyles = StyleSheet.create({
     linkText: {
         fontFamily: "vazir-bold",
         color: "#1B1464",
+    },
+    shadow: {
+        
+        elevation: 20,
+    },
+    logo: {
+        width: 75,
+        height: 55
     }
 });
 
