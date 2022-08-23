@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: "white",
-        fontFamily: "vazir",
+        fontFamily: "vazir-bold",
         textAlign: "center",
         width: "100%",
     },

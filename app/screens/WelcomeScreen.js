@@ -23,7 +23,7 @@ export default function WelcomeScreen({ navigation }) {
                     }}
                     width={"100%"}
                 />
-                <CustomButton title="ثبت نام" onPress={() => {}} width={"100%"} color="#6D214F" />
+                <CustomButton title="ثبت نام" onPress={() => {navigation.navigate("RegisterScreen")}} width={"100%"} color="#6D214F" />
             </View>
         </ImageBackground>
     );

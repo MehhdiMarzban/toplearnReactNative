@@ -3,22 +3,34 @@ import { View, StyleSheet, Keyboard } from "react-native";
 import BareButton from "../components/CustomButtons/BareButton";
 
 import WideContainer from "../components/Containers/WideContainer";
-import { loginSchema } from "../validations/formValidations";
+import { registerSchema } from "../validations/formValidations";
 import { FormikTextField, FormikSubmitButton } from "../components/Formik";
 
-const LoginScreen = ({ navigation }) => {
+const RegisterScreen = ({ navigation }) => {
     return (
         <>
-            <WideContainer title="ورود کاربر">
+            <WideContainer title="ثبت نام کاربر">
                 <Formik
-                    initialValues={{ email: "", password: "" }}
-                    validationSchema={loginSchema}
+                    initialValues={{
+                        fullname: "",
+                        email: "",
+                        password: "",
+                        passwordConfirmation: "",
+                    }}
+                    validationSchema={registerSchema}
                     onSubmit={(values) => {
                         console.log(values);
                         Keyboard.dismiss();
                     }}>
                     <>
                         <View style={styles.formContainer}>
+                            <FormikTextField
+                                name="fullname"
+                                placeHolder="نام و نام خانوادگی"
+                                iconName="account-circle"
+                                autoComplete="name"
+                            />
+
                             <FormikTextField
                                 name="email"
                                 placeHolder="ایمیل کاربر"
@@ -34,12 +46,17 @@ const LoginScreen = ({ navigation }) => {
                                 autoComplete="password"
                                 secureTextEntry
                             />
+
+                            <FormikTextField
+                                name="passwordConfirmation"
+                                placeHolder="تکرار رمز عبور"
+                                iconName="lock"
+                                autoComplete="password"
+                                secureTextEntry
+                            />
                         </View>
                         <View style={styles.buttonContainer}>
-                            <FormikSubmitButton title="ورود" />
-                            <BareButton onPress={() => navigation.goBack()}>
-                                فراموشی رمز عبور
-                            </BareButton>
+                            <FormikSubmitButton title="ثبت نام" />
                             <BareButton onPress={() => navigation.replace("WelcomeScreen")}>
                                 برگشت
                             </BareButton>
@@ -64,4 +81,5 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
 });
-export default LoginScreen;
+
+export default RegisterScreen;
