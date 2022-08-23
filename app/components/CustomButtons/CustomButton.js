@@ -20,7 +20,6 @@ const CustomButton = ({
                 style={{ width: "100%" }}
                 onPress={() => {
                     buttonRef.current.rubberBand(1000);
-                    console.log();
                     onPress();
                 }}
                 activeOpacity={0.6}>
