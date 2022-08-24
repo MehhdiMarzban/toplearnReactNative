@@ -18,7 +18,7 @@ const globalStyles = StyleSheet.create({
     },
     shadow: {
         
-        elevation: 20,
+        elevation: 8,
     },
     logo: {
         width: 75,

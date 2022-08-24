@@ -2,20 +2,21 @@ import { Formik } from "formik";
 import { View, StyleSheet, Keyboard } from "react-native";
 import BareButton from "../components/CustomButtons/BareButton";
 
-import WideContainer from "../components/Containers/WideContainer";
+import WideLayout from "../components/Layouts/WideLayout";
 import { loginSchema } from "../validations/formValidations";
 import { FormikTextField, FormikSubmitButton } from "../components/Formik";
 
 const LoginScreen = ({ navigation }) => {
     return (
         <>
-            <WideContainer title="ورود کاربر">
+            <WideLayout title="ورود کاربر">
                 <Formik
                     initialValues={{ email: "", password: "" }}
-                    validationSchema={loginSchema}
+                    // validationSchema={loginSchema}
                     onSubmit={(values) => {
                         console.log(values);
                         Keyboard.dismiss();
+                        navigation.navigate("HomeScreen");
                     }}>
                     <>
                         <View style={styles.formContainer}>
@@ -46,7 +47,7 @@ const LoginScreen = ({ navigation }) => {
                         </View>
                     </>
                 </Formik>
-            </WideContainer>
+            </WideLayout>
         </>
     );
 };

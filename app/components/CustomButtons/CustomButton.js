@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Vibration } from "react-native";
 import { useRef } from "react";
 import * as Animatable from "react-native-animatable";
 
@@ -20,6 +20,8 @@ const CustomButton = ({
                 style={{ width: "100%" }}
                 onPress={() => {
                     buttonRef.current.rubberBand(1000);
+                    //* using vibration
+                    Vibration.vibrate(25);
                     onPress();
                 }}
                 activeOpacity={0.6}>

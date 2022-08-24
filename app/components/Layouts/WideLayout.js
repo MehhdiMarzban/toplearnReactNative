@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { Image, Keyboard, Text, TouchableWithoutFeedback, StyleSheet, View } from "react-native";
 import globalStyles from "../../styles/globalStyles";
 
-const WideContainer = ({ children = <></>, title = "" }) => {
+const WideLayout = ({ children = <></>, title = "" }) => {
     return (
         <>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default WideContainer;
+export default WideLayout;
