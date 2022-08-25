@@ -27,7 +27,7 @@ const TabsNavigator = () => {
                     width: "90%",
                     left: "5%",
                     right: "5%",
-                    elevation: 5
+                    elevation: 5,
                 },
                 tabBarActiveTintColor: "#1B1464",
                 tabBarIcon: ({ focused, color, size }) => {
@@ -35,9 +35,9 @@ const TabsNavigator = () => {
                     if (route.name === "ProfileScreen") {
                         iconName = focused ? "person" : "person-outline";
                     } else if (route.name === "CoursesScreen") {
-                        iconName = "ondemand-video";
+                        iconName = "video-collection";
                     } else {
-                        iconName = "personal-video";
+                        iconName = focused ? "ondemand-video" : "personal-video";
                     }
                     return (
                         <MaterialIcons
@@ -47,7 +47,7 @@ const TabsNavigator = () => {
                         />
                     );
                 },
-                tabBarButton: (props) => <TabBarButton {...props}/>
+                tabBarButton: (props) => <TabBarButton {...props} />,
             })}
             initialRouteName="CoursesScreen">
             <Tab.Screen
