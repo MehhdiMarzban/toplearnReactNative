@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import COLORS from "./colors.json";
 
 const globalStyles = StyleSheet.create({
     container: {
@@ -6,15 +7,24 @@ const globalStyles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+    center: {
+        justifyContent: "center",
+        alignItems: "center",
+    },
     regularText: {
         fontFamily: "vazir",
+    },
+    headerText: {
+        fontFamily: "vazir-bold",
+        color: COLORS.WHITE_COLOR,
+        fontSize: 15
     },
     boldText: {
         fontFamily: "vazir-bold",
     },
     linkText: {
         fontFamily: "vazir-bold",
-        color: "#1B1464",
+        color: COLORS.PRIMARY_COLOR,
     },
     shadow: {
         
@@ -23,6 +33,14 @@ const globalStyles = StyleSheet.create({
     logo: {
         width: 75,
         height: 55
+    },
+    profile: {
+        width: 75,
+        height: 75,
+        borderRadius: 50
+    },
+    marginVertical: {
+        marginVertical: 10
     }
 });
 
