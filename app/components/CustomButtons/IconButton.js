@@ -23,7 +23,7 @@ const IconButton = ({
 };
 
 const styles = StyleSheet.create({
-    ripple: { padding: 15, backgroundColor: COLORS.WHITE_COLOR, width: "100%" },
+    ripple: { padding: 15, backgroundColor: COLORS.WHITE_COLOR, width: "100%", height: 60, justifyContent: "center" },
     text: {
         fontFamily: "vazir",
         fontSize: 15,

@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, ImageBackground, Image, StatusBar } from "react-native";
 import CustomButton from "../components/CustomButtons/CustomButton";
+import CustomOpacityButton from "../components/CustomButtons/CustomOpacityButton";
 
 export default function WelcomeScreen({ navigation }) {
     return (
@@ -16,14 +17,14 @@ export default function WelcomeScreen({ navigation }) {
                 </Text>
             </View>
             <View style={styles.bottomContainer}>
-                <CustomButton
+                <CustomOpacityButton
                     title="ورود"
                     onPress={() => {
                         navigation.navigate("LoginScreen");
                     }}
                     width={"100%"}
                 />
-                <CustomButton title="ثبت نام" onPress={() => {navigation.navigate("RegisterScreen")}} width={"100%"} color="#6D214F" />
+                <CustomOpacityButton title="ثبت نام" onPress={() => {navigation.navigate("RegisterScreen")}} width={"100%"} color="#6D214F" />
             </View>
         </ImageBackground>
     );

@@ -1,8 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, StatusBar } from "react-native";
 import COLORS from "./colors.json";
 
 const globalStyles = StyleSheet.create({
     container: {
+        marginTop: StatusBar.currentHeight,
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
@@ -17,7 +18,7 @@ const globalStyles = StyleSheet.create({
     headerText: {
         fontFamily: "vazir-bold",
         color: COLORS.WHITE_COLOR,
-        fontSize: 15
+        fontSize: 20
     },
     boldText: {
         fontFamily: "vazir-bold",
