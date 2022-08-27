@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, ImageBackground, Image, StatusBar } from "react-native";
-import CustomButton from "../components/CustomButtons/CustomButton";
 import CustomOpacityButton from "../components/CustomButtons/CustomOpacityButton";
+import BoldText from "../components/CustomTexts/BoldText";
 
 export default function WelcomeScreen({ navigation }) {
     return (
@@ -12,9 +12,9 @@ export default function WelcomeScreen({ navigation }) {
 
             <View style={styles.topContainer}>
                 <Image source={require("../assets/logo.png")} style={styles.logoImage} />
-                <Text style={styles.textHeader}>
+                <BoldText style={styles.textHeader} fontSize={2}>
                     خودآموزی ، کسب تجربه ، ورود به بازار کار با تاپ لرن
-                </Text>
+                </BoldText>
             </View>
             <View style={styles.bottomContainer}>
                 <CustomOpacityButton
@@ -56,9 +56,7 @@ const styles = StyleSheet.create({
         height: 80,
     },
     textHeader: {
-        fontFamily: "vazir-bold",
         color: "#82589F",
-        fontSize: 15,
         marginVertical: 40,
         textAlign: "center",
     },

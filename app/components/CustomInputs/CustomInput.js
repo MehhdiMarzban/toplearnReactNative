@@ -1,5 +1,7 @@
 import { View, TextInput, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import {RFPercentage} from "react-native-responsive-fontsize";
+
 import globalStyles from "../../styles/globalStyles";
 
 const CustomInput = ({
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         backgroundColor: "#2c2c54",
         fontFamily: "vazir",
-        fontSize: 15,
+        fontSize: RFPercentage(1.8),
         color: "#fff"
     },
 });

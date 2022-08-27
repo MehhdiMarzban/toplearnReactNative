@@ -22,14 +22,14 @@ const Card = ({
         <View style={styles.container}>
             <Image style={styles.image} source={imageUrl} />
             <View style={styles.cardBody}>
-                <BoldText style={styles.titleText}>{title}</BoldText>
+                <BoldText style={styles.titleText} fontSize={1.6}>{title}</BoldText>
                 <View style={styles.teacherContainer}>
                     <MaterialCommunityIcons
                         name="account-star"
                         size={20}
                         color={COLORS.LIGHT_GREY_COLOR}
                     />
-                    <RegularText style={styles.teacherText}>{teacher}</RegularText>
+                    <RegularText style={styles.teacherText} fontSize={1.3}>{teacher}</RegularText>
                 </View>
                 <View style={styles.priceContainer}>
                     <View style={styles.rightPriceContainer}>
@@ -39,9 +39,9 @@ const Card = ({
                             color={COLORS.LIGHT_GREY_COLOR}
                         />
                         {price === 0 ? (
-                            <BoldText style={styles.teacherText}>رایگان</BoldText>
+                            <BoldText style={styles.teacherText} fontSize={1.3}>رایگان</BoldText>
                         ) : (
-                            <RegularText style={styles.teacherText}>
+                            <RegularText style={styles.teacherText} fontSize={1.3}>
                                 {numberWithCommas(price)} تومان
                             </RegularText>
                         )}
@@ -75,8 +75,6 @@ const styles = StyleSheet.create({
     container: {
         width: 200,
         height: 320,
-        margin: 3,
-        marginVertical: 20,
         backgroundColor: COLORS.WHITE_COLOR,
         borderRadius: 8,
         elevation: 8,
@@ -94,12 +92,10 @@ const styles = StyleSheet.create({
     },
     titleText: {
         color: COLORS.GREY_COLOR,
-        flexWrap: "wrap",
         height: 50,
     },
     teacherText: {
         color: COLORS.GREY_COLOR,
-        fontSize: 10,
         marginLeft: 4,
     },
     teacherContainer: {

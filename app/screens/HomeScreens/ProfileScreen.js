@@ -1,7 +1,6 @@
 import { View, StyleSheet, Image, StatusBar } from "react-native";
 
 import IconButton from "../../components/CustomButtons/IconButton";
-import HeaderText from "../../components/CustomTexts/HeaderText";
 import RegularText from "../../components/CustomTexts/RegularText";
 import HomeLayout from "../../components/Layouts/HomeLayout";
 import Divider from "../../components/shared/Divider";
@@ -22,16 +21,16 @@ const ProfileScreen = () => {
                                 style={globalStyles.profile}
                             />
                             <View style={globalStyles.center}>
-                                <RegularText style={{ color: COLORS.WHITE_COLOR }}>
+                                <RegularText style={styles.profileName} fontSize={1.6}>
                                     مهدی مرزبان
                                 </RegularText>
-                                <RegularText style={{ color: COLORS.LIGHT_GREY_COLOR }}>
+                                <RegularText style={styles.profileEmail} fontSize={1.5}>
                                     marzban72@gmail.com
                                 </RegularText>
                             </View>
                         </View>
                         <Divider style={globalStyles.marginVertical} />
-                        <RegularText style={{ color: COLORS.WHITE_COLOR }}>
+                        <RegularText style={styles.profileBalance} fontSize={1.8}>
                             موجودی حساب : {numberWithCommas(3000000)} تومان
                         </RegularText>
                     </>
@@ -75,6 +74,15 @@ const styles = StyleSheet.create({
     main: {
         justifyContent: "center",
         alignItems: "center",
+    },
+    profileName: {
+        color: COLORS.WHITE_COLOR,
+    },
+    profileEmail: {
+        color: COLORS.LIGHT_GREY_COLOR,
+    },
+    profileBalance: {
+        color: COLORS.WHITE_COLOR,
     },
 });
 

@@ -10,6 +10,7 @@ const Tab = createBottomTabNavigator();
 const TabsNavigator = () => {
     return (
         <Tab.Navigator
+            backBehavior="none"
             screenOptions={({ route }) => ({
                 headerShown: false,
                 tabBarLabelStyle: {
@@ -18,7 +19,6 @@ const TabsNavigator = () => {
                     alignItems: "center",
                     marginBottom: 5,
                 },
-               
                 tabBarActiveTintColor: COLORS.PRIMARY_COLOR,
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconName;

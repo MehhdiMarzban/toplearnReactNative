@@ -3,11 +3,11 @@ import { StyleSheet, View, StatusBar } from "react-native";
 import COLORS from "../../styles/colors.json";
 import HeaderText from "../CustomTexts/HeaderText";
 
-const HomeLayout = ({ children, title = "", HeaderComponent = <></> }) => {
+const HomeLayout = ({ children, title = "", HeaderComponent = <></>, style }) => {
     return (
-        <View>
+        <View style={[styles.container, style]}>
             <View style={styles.header}>
-                <HeaderText>{title}</HeaderText>
+                <HeaderText fontSize={2.3}>{title}</HeaderText>
                 {HeaderComponent}
             </View>
             <View style={styles.main}>{children}</View>
@@ -28,6 +28,10 @@ const styles = StyleSheet.create({
     main: {
         justifyContent: "center",
         alignItems: "center",
+    },
+    container: {
+        flex: 1,
+        marginBottom: 60
     },
 });
 
