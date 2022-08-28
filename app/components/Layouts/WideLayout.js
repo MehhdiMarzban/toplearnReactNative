@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { Image, Keyboard, Text, TouchableWithoutFeedback, StyleSheet, View } from "react-native";
 import globalStyles from "../../styles/globalStyles";
+import BoldText from "../CustomTexts/BoldText";
 
 const WideLayout = ({ children = <></>, title = "" }) => {
     return (
@@ -9,7 +10,7 @@ const WideLayout = ({ children = <></>, title = "" }) => {
                 <View style={[globalStyles.container, styles.container]}>
                     <StatusBar style="light" backgroundColor="#1B1464" />
                     <View style={[styles.header, globalStyles.shadow]}>
-                        <Text style={styles.textHeader}>{title}</Text>
+                        <BoldText style={styles.textHeader} fontSize={3.3}>{title}</BoldText>
                         <Image
                             source={require("../../assets/logo.png")}
                             style={globalStyles.logo}
@@ -34,13 +35,12 @@ const styles = StyleSheet.create({
     },
     textHeader: {
         color: "#FFFFFF",
-        fontFamily: "vazir-bold",
-        fontSize: 25,
         marginVertical: 30,
     },
     container: {
         justifyContent: "space-between",
         backgroundColor: "#fff",
+        flex: 1
     },
 });
 

@@ -4,5 +4,8 @@
     "LIGHT_BACKGROUND_COLOR": "#ccc",
     "LIGHT_GREY_COLOR": "lightgrey",
     "GREY_COLOR": "#555",
-    "RED_COLOR": "#eb3b5a"
+    "RED_COLOR": "#eb3b5a",
+    "CYAN_COLOR": "#33d9b2",
+    "RIPPLE_COLOR": "#ffffff40",
+    "MAGENTA_PURPLE": "#6D214F"
 }

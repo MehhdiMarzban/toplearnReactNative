@@ -36,6 +36,7 @@ const CourseList = ({ courses = [], listTitle = "" }) => {
 
 const styles = StyleSheet.create({
     flatListContainer: {
+        flex: 1,
         heigth: 450,
         width: "100%",
         marginVertical: 10,

@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import * as Animatable from "react-native-animatable";
-import Ripple from "react-native-material-ripple";
+import { Pressable } from "react-native";
+
+import COLORS from "../../styles/colors.json";
 
 const TabBarButton = ({ onPress = () => null, children, ...otherProps }) => {
     const btnRef = useRef();
@@ -9,9 +11,12 @@ const TabBarButton = ({ onPress = () => null, children, ...otherProps }) => {
         onPress();
     };
     return (
-        <Ripple onPress={handleOnPress} {...otherProps}>
+        <Pressable
+            android_ripple={{ color: COLORS.LIGHT_GREY_COLOR }}
+            onPress={handleOnPress}
+            {...otherProps}>
             <Animatable.View ref={btnRef}>{children}</Animatable.View>
-        </Ripple>
+        </Pressable>
     );
 };
 

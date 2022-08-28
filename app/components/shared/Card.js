@@ -20,7 +20,10 @@ const Card = ({
 }) => {
     return (
         <View style={styles.container}>
-            <Image style={styles.image} source={imageUrl} />
+            <Image
+                resizeMode="cover"
+                style={styles.image} 
+                source={imageUrl} />
             <View style={styles.cardBody}>
                 <BoldText style={styles.titleText} fontSize={1.6}>{title}</BoldText>
                 <View style={styles.teacherContainer}>
@@ -73,6 +76,7 @@ const Card = ({
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         width: 200,
         height: 320,
         backgroundColor: COLORS.WHITE_COLOR,

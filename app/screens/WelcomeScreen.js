@@ -1,14 +1,31 @@
-import { StyleSheet, Text, View, ImageBackground, Image, StatusBar } from "react-native";
+import { StyleSheet, View, ImageBackground, Image, StatusBar } from "react-native";
+import netInfo from "@react-native-community/netinfo";
+import { useEffect, useState } from "react";
+
 import CustomOpacityButton from "../components/CustomButtons/CustomOpacityButton";
 import BoldText from "../components/CustomTexts/BoldText";
+import NetAlert from "../components/shared/NetAlert";
+import COLORS from "../styles/colors.json";
 
 export default function WelcomeScreen({ navigation }) {
+    const [isConnected, setIsConnected] = useState(true);
+
+    useEffect(() => {
+        //* one of way of using netinfo
+        // netInfo.fetch().then((value) => setIsConnected(!value.isConnected));
+        
+        //* this is second way of using netinfo
+        netInfo.addEventListener(state => setIsConnected(state.isConnected));
+    }, []);
+
     return (
         <ImageBackground
             blurRadius={3}
             source={require("../assets/bg1.jpg")}
             style={styles.imageBackground}>
             <StatusBar translucent backgroundColor="transparent" />
+
+            {isConnected ? null : <NetAlert />}
 
             <View style={styles.topContainer}>
                 <Image source={require("../assets/logo.png")} style={styles.logoImage} />
@@ -24,7 +41,14 @@ export default function WelcomeScreen({ navigation }) {
                     }}
                     width={"100%"}
                 />
-                <CustomOpacityButton title="ثبت نام" onPress={() => {navigation.navigate("RegisterScreen")}} width={"100%"} color="#6D214F" />
+                <CustomOpacityButton
+                    title="ثبت نام"
+                    onPress={() => {
+                        navigation.navigate("RegisterScreen");
+                    }}
+                    width={"100%"}
+                    color={COLORS.MAGENTA_PURPLE}
+                />
             </View>
         </ImageBackground>
     );
@@ -53,7 +77,7 @@ const styles = StyleSheet.create({
     },
     logoImage: {
         width: 120,
-        height: 80,
+        height: 85,
     },
     textHeader: {
         color: "#82589F",
