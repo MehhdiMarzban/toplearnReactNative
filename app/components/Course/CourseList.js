@@ -27,6 +27,7 @@ const CourseList = ({ courses = [], listTitle = "" }) => {
                         teacher={item.teacher}
                         imageUrl={item.image}
                         offPercent={item.offPercent}
+                        courseTime={item.time}
                     />
                 )}
             />

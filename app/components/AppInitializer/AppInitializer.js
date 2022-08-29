@@ -1,5 +1,8 @@
 import { I18nManager } from "react-native";
 import { useFonts } from "expo-font";
+import Toast from "react-native-toast-message";
+
+import toastConfig from "../../utils/toastConfig";
 
 //* add support rtl
 I18nManager.allowRTL(true);
@@ -12,5 +15,10 @@ export default function AppInitializer({ children }) {
         "vazir-bold": require("../../assets/fonts/Vazir-Bold.ttf"),
     });
     if (!isLoadedFont) return null;
-    return <>{children}</>;
+    return (
+        <>
+            {children}
+            <Toast  config={toastConfig}/>
+        </>
+    );
 }
