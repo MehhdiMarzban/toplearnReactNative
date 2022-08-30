@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import { View, StyleSheet, Keyboard} from "react-native";
+import { View, StyleSheet, Keyboard } from "react-native";
 import Toast from "react-native-toast-message";
 
 import BareButton from "../components/CustomButtons/BareButton";
@@ -17,7 +17,13 @@ const LoginScreen = ({ navigation }) => {
                     onSubmit={(values) => {
                         console.log(values);
                         // ToastAndroid.showWithGravity("خوش آمدید!", ToastAndroid.LONG, ToastAndroid.TOP);
-                        Toast.show({text1: "مهدی مرزبان عزیز", text2: "مهدی مرزبان عزیز", position: "top", type: "success"});
+                        Toast.show({
+                            text1: "خوش اومدی!",
+                            text2: "مهدی مرزبان عزیز",
+                            position: "top",
+                            type: "custom",
+                            // props: { bg: "lawngreen" },
+                        });
                         Keyboard.dismiss();
                         navigation.navigate("HomeScreen");
                     }}>
