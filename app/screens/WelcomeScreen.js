@@ -1,13 +1,17 @@
-import { StyleSheet, View, ImageBackground, Image } from "react-native";
-import {StatusBar} from "expo-status-bar";
+import { StyleSheet, View, ImageBackground, Image} from "react-native";
+import { StatusBar } from "expo-status-bar";
 import constants from "expo-constants";
 
 import CustomOpacityButton from "../components/CustomButtons/CustomOpacityButton";
 import BoldText from "../components/CustomTexts/BoldText";
 import COLORS from "../styles/colors.json";
+import useDoubleClickExit from "../hooks/useDoubleClickExit";
 
 export default function WelcomeScreen({ navigation }) {
 
+     //* this hook handle double click for exit app
+     useDoubleClickExit();
+    
     return (
         <ImageBackground
             blurRadius={3}

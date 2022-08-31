@@ -1,12 +1,13 @@
 import RegularText from "../../components/CustomTexts/RegularText";
-import SimpleLayout from "../../components/Layouts/SimpleLayout";
+import HomeLayout from "../../components/Layouts/HomeLayout";
+
 
 const MyCoursesScreen = () => {
     return (
         <>
-            <SimpleLayout>
+            <HomeLayout title="دوره های من">
                 <RegularText>دورهای کاربر گرامی</RegularText>
-            </SimpleLayout>
+            </HomeLayout>
         </>
     );
 };

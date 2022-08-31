@@ -4,7 +4,7 @@
     "slug": "toplearn",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./app/assets/logo.png",
+    "icon": "./app/assets/favicon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./app/assets/splash.png",
@@ -22,7 +22,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./app/assets/logo.png",
+        "foregroundImage": "./app/assets/favicon.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.murirti.toplearn"

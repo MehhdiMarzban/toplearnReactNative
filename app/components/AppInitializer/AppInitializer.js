@@ -4,7 +4,6 @@ import Toast from "react-native-toast-message";
 import { useEffect, useState } from "react";
 import netInfo from "@react-native-community/netinfo";
 
-
 import toastConfig from "../../utils/toastConfig";
 import NetAlert from "../shared/NetAlert";
 
@@ -18,9 +17,9 @@ export default function AppInitializer({ children }) {
     useEffect(() => {
         //* one of way of using netinfo
         // netInfo.fetch().then((value) => setIsConnected(!value.isConnected));
-        
+
         //* this is second way of using netinfo
-        netInfo.addEventListener(state => setIsConnected(state.isConnected));
+        netInfo.addEventListener((state) => setIsConnected(state.isConnected));
     });
 
     //* loading fonts
@@ -32,7 +31,7 @@ export default function AppInitializer({ children }) {
     return (
         <>
             {children}
-            <Toast  config={toastConfig}/>
+            <Toast config={toastConfig} />
             {isConnected ? null : <NetAlert />}
         </>
     );
