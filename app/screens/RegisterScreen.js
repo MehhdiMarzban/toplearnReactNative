@@ -57,7 +57,7 @@ const RegisterScreen = ({ navigation }) => {
                                 </View>
                                 <View style={styles.buttonContainer}>
                                     <FormikSubmitButton title="ثبت نام" />
-                                    <BareButton onPress={() => navigation.replace("WelcomeScreen")}>
+                                    <BareButton onPress={() => navigation.replace("WelcomeScreen")} fontSize={1.8} style={styles.margin}>
                                         برگشت
                                     </BareButton>
                                 </View>
@@ -80,6 +80,9 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+    margin: {
+        marginVertical: 8
+    }
 });
 
 export default RegisterScreen;

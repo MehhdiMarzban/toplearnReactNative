@@ -1,22 +1,12 @@
-import { StyleSheet, View, ImageBackground, Image, StatusBar } from "react-native";
-import netInfo from "@react-native-community/netinfo";
-import { useEffect, useState } from "react";
+import { StyleSheet, View, ImageBackground, Image } from "react-native";
+import {StatusBar} from "expo-status-bar";
+import constants from "expo-constants";
 
 import CustomOpacityButton from "../components/CustomButtons/CustomOpacityButton";
 import BoldText from "../components/CustomTexts/BoldText";
-import NetAlert from "../components/shared/NetAlert";
 import COLORS from "../styles/colors.json";
 
 export default function WelcomeScreen({ navigation }) {
-    const [isConnected, setIsConnected] = useState(true);
-
-    useEffect(() => {
-        //* one of way of using netinfo
-        // netInfo.fetch().then((value) => setIsConnected(!value.isConnected));
-        
-        //* this is second way of using netinfo
-        netInfo.addEventListener(state => setIsConnected(state.isConnected));
-    }, []);
 
     return (
         <ImageBackground
@@ -24,8 +14,6 @@ export default function WelcomeScreen({ navigation }) {
             source={require("../assets/bg1.jpg")}
             style={styles.imageBackground}>
             <StatusBar translucent backgroundColor="transparent" />
-
-            {isConnected ? null : <NetAlert />}
 
             <View style={styles.topContainer}>
                 <Image source={require("../assets/logo.png")} style={styles.logoImage} />
@@ -73,7 +61,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "space-between",
-        paddingTop: StatusBar.currentHeight,
+        paddingTop: constants.statusBarHeight,
     },
     logoImage: {
         width: 120,

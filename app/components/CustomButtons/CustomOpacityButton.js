@@ -17,7 +17,7 @@ const CustomOpacityButton = ({
                 onPress();
             }}
             activeOpacity={0.7}>
-            <BoldText style={styles.buttonText} fontSize={1.6}>{title}</BoldText>
+            <BoldText style={styles.buttonText} fontSize={1.8}>{title}</BoldText>
         </TouchableOpacity>
     );
 };

@@ -1,13 +1,16 @@
-import { Text, TouchableWithoutFeedback } from "react-native";
-import globalStyles from "../../styles/globalStyles";
+import { TouchableWithoutFeedback } from "react-native";
 import * as Animatable from "react-native-animatable";
 
-const BareButton = ({ children, ...otherProps }) => {
+import globalStyles from "../../styles/globalStyles";
+import BoldText from "../CustomTexts/BoldText";
+
+const BareButton = ({ children, fontSize = 1.5, ...otherProps }) => {
     return (
-        <Animatable.View animation={"bounceIn"} >
-            <TouchableWithoutFeedback
-                {...otherProps}>
-                <Text style={[globalStyles.linkText, { marginVertical: 10 }]}>{children}</Text>
+        <Animatable.View animation={"bounceIn"} style={otherProps?.style}>
+            <TouchableWithoutFeedback {...otherProps} >
+                <BoldText style={globalStyles.linkText} fontSize={fontSize}>
+                    {children}
+                </BoldText>
             </TouchableWithoutFeedback>
         </Animatable.View>
     );

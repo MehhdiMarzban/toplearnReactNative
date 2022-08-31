@@ -25,7 +25,11 @@ const LoginScreen = ({ navigation }) => {
                             // props: { bg: "lawngreen" },
                         });
                         Keyboard.dismiss();
-                        navigation.navigate("HomeScreen");
+                        navigation.reset({
+                            index: 0,
+                            routes: [{name: "HomeScreen"}],
+                        })
+                        // navigation.navigate("HomeScreen");
                     }}>
                     <>
                         <View style={styles.formContainer}>
@@ -47,10 +51,10 @@ const LoginScreen = ({ navigation }) => {
                         </View>
                         <View style={styles.buttonContainer}>
                             <FormikSubmitButton title="ورود" />
-                            <BareButton onPress={() => navigation.goBack()}>
+                            <BareButton onPress={() => navigation.goBack()} fontSize={1.8} style={styles.margin}>
                                 فراموشی رمز عبور
                             </BareButton>
-                            <BareButton onPress={() => navigation.replace("WelcomeScreen")}>
+                            <BareButton onPress={() => navigation.replace("WelcomeScreen")} fontSize={1.8} style={styles.margin}>
                                 برگشت
                             </BareButton>
                         </View>
@@ -73,5 +77,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+    margin: {
+        marginVertical:8
+    }
 });
 export default LoginScreen;

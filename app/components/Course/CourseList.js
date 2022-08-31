@@ -1,15 +1,20 @@
 import { FlatList, StyleSheet, View } from "react-native";
 import BoldText from "../CustomTexts/BoldText";
+import {MaterialIcons} from "@expo/vector-icons";
 
 import Card from "../shared/Card";
 import COLORS from "../../styles/colors.json";
 import CardSeperator from "../shared/CardSeperator";
 import Divider from "../shared/Divider";
+import BareButton from "../CustomButtons/BareButton";
 
 const CourseList = ({ courses = [], listTitle = "" }) => {
     return (
         <View style={styles.flatListContainer}>
-            <BoldText style={styles.groupTitle} fontSize={2.2}>{listTitle}</BoldText>
+            <View style={styles.moreContainer}>
+                <BoldText style={styles.groupTitle} fontSize={2.2}>{listTitle}</BoldText>
+                <BareButton style={styles.bareButton}><MaterialIcons name="arrow-back" size={28} color={COLORS.GREY_COLOR}/></BareButton>
+            </View>
             <Divider style={styles.headerDivider}/>
             <FlatList
                 showsHorizontalScrollIndicator={false}
@@ -51,6 +56,14 @@ const styles = StyleSheet.create({
     headerDivider: {
         height: 4,
         width: "50%",
+    },
+    moreContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between"
+    },
+    bareButton: {
+      marginRight: 14
     }
 });
 export default CourseList;
