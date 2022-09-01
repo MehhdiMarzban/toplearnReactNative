@@ -3,7 +3,9 @@ import { useFonts } from "expo-font";
 import Toast from "react-native-toast-message";
 import { useEffect, useState } from "react";
 import netInfo from "@react-native-community/netinfo";
+import { Provider } from "react-redux";
 
+import {store} from "../../redux/store";
 import toastConfig from "../../utils/toastConfig";
 import NetAlert from "../shared/NetAlert";
 
@@ -22,6 +24,7 @@ export default function AppInitializer({ children }) {
         netInfo.addEventListener((state) => setIsConnected(state.isConnected));
     });
 
+
     //* loading fonts
     const [isLoadedFont] = useFonts({
         vazir: require("../../assets/fonts/Vazir.ttf"),
@@ -30,9 +33,11 @@ export default function AppInitializer({ children }) {
     if (!isLoadedFont) return null;
     return (
         <>
-            {children}
-            <Toast config={toastConfig} />
-            {isConnected ? null : <NetAlert />}
+            <Provider store={store}>
+                {children}
+                <Toast config={toastConfig} />
+                {isConnected ? null : <NetAlert />}
+            </Provider>
         </>
     );
 }

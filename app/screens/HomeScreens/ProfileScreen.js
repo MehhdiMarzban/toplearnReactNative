@@ -1,4 +1,5 @@
 import { View, StyleSheet, Image, StatusBar } from "react-native";
+import {useSelector} from "react-redux";
 
 import IconButton from "../../components/CustomButtons/IconButton";
 import RegularText from "../../components/CustomTexts/RegularText";
@@ -9,6 +10,8 @@ import globalStyles from "../../styles/globalStyles";
 import { numberWithCommas } from "../../utils/price";
 
 const ProfileScreen = () => {
+    const profile = useSelector(state => state.user);
+
     return (
         <>
             <HomeLayout
@@ -22,16 +25,16 @@ const ProfileScreen = () => {
                             />
                             <View style={globalStyles.center}>
                                 <RegularText style={styles.profileName} fontSize={1.6}>
-                                    مهدی مرزبان
+                                    {profile.name}
                                 </RegularText>
                                 <RegularText style={styles.profileEmail} fontSize={1.5}>
-                                    marzban72@gmail.com
+                                {profile.email}
                                 </RegularText>
                             </View>
                         </View>
                         <Divider style={globalStyles.marginVertical} />
                         <RegularText style={styles.profileBalance} fontSize={1.8}>
-                            موجودی حساب : {numberWithCommas(3000000)} تومان
+                            موجودی حساب : {numberWithCommas(profile.balance)} تومان
                         </RegularText>
                     </>
                 }>
