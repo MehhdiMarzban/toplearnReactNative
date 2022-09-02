@@ -54,9 +54,6 @@ const LoginScreen = ({ navigation }) => {
                             <BareButton onPress={() => navigation.goBack()} fontSize={1.8} style={styles.margin}>
                                 فراموشی رمز عبور
                             </BareButton>
-                            <BareButton onPress={() => navigation.replace("WelcomeScreen")} fontSize={1.8} style={styles.margin}>
-                                برگشت
-                            </BareButton>
                         </View>
                     </>
                 </Formik>

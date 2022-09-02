@@ -1,5 +1,8 @@
-import { View, StyleSheet, Image, StatusBar } from "react-native";
-import {useSelector} from "react-redux";
+import { useState, useEffect } from "react";
+import { View, StyleSheet, Image, StatusBar, TouchableOpacity } from "react-native";
+import { useSelector } from "react-redux";
+import * as imagePicker from "expo-image-picker";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import IconButton from "../../components/CustomButtons/IconButton";
 import RegularText from "../../components/CustomTexts/RegularText";
@@ -10,7 +13,28 @@ import globalStyles from "../../styles/globalStyles";
 import { numberWithCommas } from "../../utils/price";
 
 const ProfileScreen = () => {
-    const profile = useSelector(state => state.user);
+    const profile = useSelector((state) => state.user);
+    const [imageUri, setImageUri] = useState(null);
+
+    useEffect(() => {
+        if(profile.profileUri){
+            setImageUri(profile.profileUri);
+        }
+    }, []);
+
+    const handlePickImage = async () => {
+        const result = await imagePicker.launchImageLibraryAsync({
+            allowsEditing: true,
+            aspect: [3, 3],
+            mediaTypes: imagePicker.MediaTypeOptions.Images,
+            quality: 1,
+        });
+
+        if (!result.cancelled) {
+            setImageUri(result.uri);
+            await AsyncStorage.setItem("profileUri", result.uri);
+        }
+    };
 
     return (
         <>
@@ -19,16 +43,25 @@ const ProfileScreen = () => {
                 HeaderComponent={
                     <>
                         <View style={styles.headerDetails}>
-                            <Image
-                                source={require("../../assets/profile.png")}
-                                style={globalStyles.profile}
-                            />
+                            <TouchableOpacity onPress={handlePickImage}>
+                                {imageUri ? (
+                                    <Image
+                                        source={{uri: imageUri}}
+                                        style={globalStyles.profile}
+                                    />
+                                ) : (
+                                    <Image
+                                        source={require("../../assets/profile.png")}
+                                        style={globalStyles.profile}
+                                    />
+                                )}
+                            </TouchableOpacity>
                             <View style={globalStyles.center}>
                                 <RegularText style={styles.profileName} fontSize={1.6}>
                                     {profile.name}
                                 </RegularText>
                                 <RegularText style={styles.profileEmail} fontSize={1.5}>
-                                {profile.email}
+                                    {profile.email}
                                 </RegularText>
                             </View>
                         </View>

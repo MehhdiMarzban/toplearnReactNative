@@ -57,9 +57,6 @@ const RegisterScreen = ({ navigation }) => {
                                 </View>
                                 <View style={styles.buttonContainer}>
                                     <FormikSubmitButton title="ثبت نام" />
-                                    <BareButton onPress={() => navigation.replace("WelcomeScreen")} fontSize={1.8} style={styles.margin}>
-                                        برگشت
-                                    </BareButton>
                                 </View>
                             </>
                         </Formik>
