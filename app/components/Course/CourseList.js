@@ -8,7 +8,10 @@ import CardSeperator from "../shared/CardSeperator";
 import Divider from "../shared/Divider";
 import BareButton from "../CustomButtons/BareButton";
 
-const CourseList = ({ courses = [], listTitle = "" }) => {
+const CourseList = ({ courses = [], listTitle = "" , handleCourseClick = () => {}}) => {
+
+    
+
     return (
         <View style={styles.flatListContainer}>
             <View style={styles.moreContainer}>
@@ -27,6 +30,7 @@ const CourseList = ({ courses = [], listTitle = "" }) => {
                 ItemSeparatorComponent={CardSeperator}
                 renderItem={({ item }) => (
                     <Card
+                        handleCourseClick={() => {handleCourseClick(item)}}
                         title={item.title}
                         price={item.price}
                         teacher={item.teacher}

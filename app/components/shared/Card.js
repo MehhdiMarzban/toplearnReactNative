@@ -19,12 +19,12 @@ const Card = ({
     detailOnPress = () => {
         return null;
     },
-    addOnPress = () => {
+    handleCourseClick = () => {
         return null;
     },
 }) => {
     return (
-            <TouchableOpacity style={styles.container} activeOpacity={0.7} >
+            <TouchableOpacity style={styles.container} activeOpacity={0.7} onPress={handleCourseClick}>
                 <Image resizeMode="cover" style={styles.image} source={imageUrl} />
                 <View style={styles.cardBody}>
                     <BoldText style={styles.titleText} fontSize={1.6}>
@@ -74,7 +74,7 @@ const Card = ({
                         )}
                     </View>
                     <Divider />
-                    <View style={styles.buttonContainer} onPress={addOnPress}>
+                    <View style={styles.buttonContainer} onPress={handleCourseClick}>
                         <TabBarButton style={styles.cardButton}>
                             <MaterialCommunityIcons name="cart-plus" size={30} />
                         </TabBarButton>

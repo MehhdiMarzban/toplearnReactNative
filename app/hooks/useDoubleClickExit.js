@@ -6,7 +6,7 @@ import { BackHandler } from "react-native";
 const useDoubleClickExit = (message) => {
     //* double back for exit
     const indexScreen = useNavigationState((state) => state.index);
-    console.log(indexScreen);
+
     useEffect(() => {
         let clickNumber = 0;
         if (indexScreen > 0) {

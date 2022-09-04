@@ -5,15 +5,16 @@ import constants from "expo-constants";
 import COLORS from "../../styles/colors.json";
 import HeaderText from "../CustomTexts/HeaderText";
 
-
-const HomeLayout = ({ children, title = "", HeaderComponent = <></>, style }) => {
+const HomeLayout = ({ children, title = false, HeaderComponent = <></>, style }) => {
     return (
         <>
             <View style={[styles.container, style]}>
-                <View style={styles.header}>
-                    <HeaderText fontSize={2.3}>{title}</HeaderText>
-                    {HeaderComponent}
-                </View>
+                {title ?  (
+                    <View style={styles.header}>
+                        <HeaderText fontSize={2.3}>{title}</HeaderText>
+                        {HeaderComponent}
+                    </View>
+                ): null }
                 <View style={styles.main}>{children}</View>
             </View>
             <StatusBar style="light" backgroundColor={COLORS.PRIMARY_COLOR} />

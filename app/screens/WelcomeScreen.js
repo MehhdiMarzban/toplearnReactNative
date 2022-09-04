@@ -1,17 +1,25 @@
-import { StyleSheet, View, ImageBackground, Image} from "react-native";
+import { StyleSheet, View, ImageBackground, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import constants from "expo-constants";
+import * as Notification from "expo-notifications";
 
 import CustomOpacityButton from "../components/CustomButtons/CustomOpacityButton";
 import BoldText from "../components/CustomTexts/BoldText";
 import COLORS from "../styles/colors.json";
 import useDoubleClickExit from "../hooks/useDoubleClickExit";
 
-export default function WelcomeScreen({ navigation }) {
+Notification.setNotificationHandler({
+    handleNotification: async () => ({
+        shouldShowAlert: true,
+        shouldPlaySound: false,
+        shouldSetBadge: false,
+    }),
+});
 
-     //* this hook handle double click for exit app
-     useDoubleClickExit();
-    
+export default function WelcomeScreen({ navigation }) {
+    //* this hook handle double click for exit app
+    useDoubleClickExit();
+
     return (
         <ImageBackground
             blurRadius={3}
@@ -37,6 +45,7 @@ export default function WelcomeScreen({ navigation }) {
                     title="ثبت نام"
                     onPress={() => {
                         navigation.navigate("RegisterScreen");
+                        notificationHandler();
                     }}
                     width={"100%"}
                     color={COLORS.MAGENTA_PURPLE}
@@ -45,6 +54,21 @@ export default function WelcomeScreen({ navigation }) {
         </ImageBackground>
     );
 }
+
+const notificationHandler = async () => {
+    await Notification.scheduleNotificationAsync({
+        content: {
+            title: "خوش آمدید!",
+            body: "امیدواریم بتوانیم در ادامه مسیر همراه و یاری دهنده خوبی برای شما باشیم.💓",
+            data: { data: "https://mehdi-marzban.ir" },
+            vibrate: true,
+            badge: 2,
+            color: COLORS.MAGENTA_PURPLE,
+            launchImageName: "icon.png"
+        },
+        trigger: { seconds: 2 },
+    });
+};
 
 const styles = StyleSheet.create({
     bottomContainer: {
