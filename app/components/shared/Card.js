@@ -24,66 +24,66 @@ const Card = ({
     },
 }) => {
     return (
-            <TouchableOpacity style={styles.container} activeOpacity={0.7} onPress={handleCourseClick}>
-                <Image resizeMode="cover" style={styles.image} source={imageUrl} />
-                <View style={styles.cardBody}>
-                    <BoldText style={styles.titleText} fontSize={1.6}>
-                        {title}
-                    </BoldText>
-                    <View style={styles.infoContainer}>
-                        <View style={styles.teacherContainer}>
-                            <MaterialCommunityIcons
-                                name="account-star"
-                                size={20}
-                                color={COLORS.LIGHT_GREY_COLOR}
-                            />
-                            <RegularText style={styles.teacherText} fontSize={1.3}>
-                                {teacher}
-                            </RegularText>
-                        </View>
-                        <View style={styles.courseTime}>
-                            <RegularText fontSize={1.3}>{courseTime}</RegularText>
-                        </View>
+        <TouchableOpacity style={styles.container} activeOpacity={0.7} onPress={handleCourseClick}>
+            <Image resizeMode="cover" style={styles.image} source={imageUrl} />
+            <View style={styles.cardBody}>
+                <BoldText style={styles.titleText} fontSize={1.6}>
+                    {title}
+                </BoldText>
+                <View style={styles.infoContainer}>
+                    <View style={styles.teacherContainer}>
+                        <MaterialCommunityIcons
+                            name="account-star"
+                            size={20}
+                            color={COLORS.LIGHT_GREY_COLOR}
+                        />
+                        <RegularText style={styles.teacherText} fontSize={1.3}>
+                            {teacher}
+                        </RegularText>
                     </View>
-                    <View style={styles.priceContainer}>
-                        <View style={styles.rightPriceContainer}>
-                            <MaterialCommunityIcons
-                                name="cash-register"
-                                size={20}
-                                color={COLORS.LIGHT_GREY_COLOR}
-                            />
-                            {price === 0 ? (
-                                <BoldText style={styles.teacherText} fontSize={1.3}>
-                                    رایگان
-                                </BoldText>
-                            ) : (
-                                <RegularText style={styles.teacherText} fontSize={1.3}>
-                                    {numberWithCommas(price)} تومان
-                                </RegularText>
-                            )}
-                        </View>
-                        {offPercent && (
-                            <Badge>
-                                {offPercent}{" "}
-                                <MaterialCommunityIcons
-                                    name="brightness-percent"
-                                    size={10}
-                                    color={COLORS.WHITE_COLOR}
-                                />
-                            </Badge>
-                        )}
-                    </View>
-                    <Divider />
-                    <View style={styles.buttonContainer} onPress={handleCourseClick}>
-                        <TabBarButton style={styles.cardButton}>
-                            <MaterialCommunityIcons name="cart-plus" size={30} />
-                        </TabBarButton>
-                        <TabBarButton style={styles.cardButton} onPress={detailOnPress}>
-                            <MaterialCommunityIcons name="shopping-search" size={30} />
-                        </TabBarButton>
+                    <View style={styles.courseTime}>
+                        <RegularText fontSize={1.3}>{courseTime}</RegularText>
                     </View>
                 </View>
-            </TouchableOpacity>
+                <View style={styles.priceContainer}>
+                    <View style={styles.rightPriceContainer}>
+                        <MaterialCommunityIcons
+                            name="cash-register"
+                            size={20}
+                            color={COLORS.LIGHT_GREY_COLOR}
+                        />
+                        {price === 0 ? (
+                            <BoldText style={styles.teacherText} fontSize={1.3}>
+                                رایگان
+                            </BoldText>
+                        ) : (
+                            <RegularText style={styles.teacherText} fontSize={1.3}>
+                                {numberWithCommas(price)} تومان
+                            </RegularText>
+                        )}
+                    </View>
+                    {offPercent && (
+                        <Badge>
+                            {offPercent}{" "}
+                            <MaterialCommunityIcons
+                                name="brightness-percent"
+                                size={10}
+                                color={COLORS.WHITE_COLOR}
+                            />
+                        </Badge>
+                    )}
+                </View>
+                <Divider />
+                <View style={styles.buttonContainer}>
+                    <TabBarButton style={styles.cardButton} onPress={handleCourseClick}>
+                        <MaterialCommunityIcons name="cart-plus" size={30} />
+                    </TabBarButton>
+                    <TabBarButton style={styles.cardButton} onPress={handleCourseClick}>
+                        <MaterialCommunityIcons name="shopping-search" size={30} />
+                    </TabBarButton>
+                </View>
+            </View>
+        </TouchableOpacity>
     );
 };
 
