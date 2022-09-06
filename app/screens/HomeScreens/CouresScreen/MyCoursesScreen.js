@@ -1,5 +1,5 @@
-import RegularText from "../../components/CustomTexts/RegularText";
-import HomeLayout from "../../components/Layouts/HomeLayout";
+import RegularText from "../../../components/CustomTexts/RegularText";
+import HomeLayout from "../../../components/Layouts/HomeLayout";
 
 
 const MyCoursesScreen = () => {

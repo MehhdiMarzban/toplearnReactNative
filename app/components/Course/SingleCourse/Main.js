@@ -1,4 +1,4 @@
-import { FlatList, View } from "react-native";
+import { FlatList } from "react-native";
 import DownloadList from "./DownloadList";
 import HeaderDetails from "./HeaderDetails";
 const Main = ({ data }) => {

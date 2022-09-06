@@ -1,8 +1,8 @@
 import { FlatList } from "react-native";
 import { useSelector } from "react-redux";
 
-import CourseList from "../../components/Course/CourseList";
-import HomeLayout from "../../components/Layouts/HomeLayout";
+import CourseList from "../../../components/Course/CourseList";
+import HomeLayout from "../../../components/Layouts/HomeLayout";
 
 const CoursesScreen = ({ navigation }) => {
     const courses = useSelector((state) => state.courses);
