@@ -4,7 +4,7 @@
     "slug": "toplearn",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./app/assets/favicon.png",
+    "icon": "./app/assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./app/assets/splash.png",
@@ -22,13 +22,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./app/assets/favicon.png",
+        "foregroundImage": "./app/assets/icon.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.murirti.toplearn"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3696265c-f8bf-43ad-8678-b667620d4ae2"
+      }
     }
   }
 }

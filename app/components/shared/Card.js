@@ -27,7 +27,7 @@ const Card = ({
         <TouchableOpacity style={styles.container} activeOpacity={0.7} onPress={handleCourseClick}>
             <Image resizeMode="cover" style={styles.image} source={imageUrl} />
             <View style={styles.cardBody}>
-                <BoldText style={styles.titleText} fontSize={1.6}>
+                <BoldText style={styles.titleText} fontSize={1.6} numberOfLines={2}>
                     {title}
                 </BoldText>
                 <View style={styles.infoContainer}>

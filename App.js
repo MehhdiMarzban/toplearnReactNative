@@ -4,7 +4,7 @@ import { ToplearnNavigation } from "./app/routes";
 export default function App() {
     return (
         <AppInitializer>
-           <ToplearnNavigation />
+            <ToplearnNavigation />
         </AppInitializer>
     );
 }

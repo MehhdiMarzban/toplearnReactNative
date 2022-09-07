@@ -11,6 +11,8 @@ const StacksNavigator = () => {
         <Stack.Navigator
             screenOptions={{
                 headerShown: false,
+                headerTitleAlign: "center",
+                animationTypeForReplace:"push",
                 animation: "default",
                 headerStyle: { backgroundColor: COLORS.PRIMARY_COLOR },
                 headerTitleStyle: { color: COLORS.WHITE_COLOR, fontFamily: "vazir-bold" },

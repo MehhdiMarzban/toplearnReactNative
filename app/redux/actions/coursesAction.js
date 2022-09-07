@@ -5,7 +5,7 @@ const courses = [
         courses: [
             {
                 id: 1,
-                title: "دوره جامع NodeJs",
+                title: "دوره جامع NodeJsدوره جامع NodeJsدوره جامع NodeJsدوره جامع NodeJs",
                 price: "300000",
                 time: "15:00:00",
                 teacher: "یونس قربانی",

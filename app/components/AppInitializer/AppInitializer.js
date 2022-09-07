@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 import netInfo from "@react-native-community/netinfo";
 import { Provider } from "react-redux";
 
-import {store} from "../../redux/store";
+import { store } from "../../redux/store";
 import toastConfig from "../../utils/toastConfig";
 import NetAlert from "../shared/NetAlert";
 
 //* add support rtl
-I18nManager.allowRTL(true);
 I18nManager.forceRTL(true);
+I18nManager.allowRTL(true);
 
 export default function AppInitializer({ children }) {
     //* disconnect alert
@@ -23,7 +23,6 @@ export default function AppInitializer({ children }) {
         //* this is second way of using netinfo
         netInfo.addEventListener((state) => setIsConnected(state.isConnected));
     });
-
 
     //* loading fonts
     const [isLoadedFont] = useFonts({

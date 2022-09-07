@@ -9,16 +9,15 @@ const IconButton = ({
     iconSize = 30,
     iconColor = COLORS.LIGHT_GREY_COLOR,
     btnTitle = "",
-    style ={},
+    style = {},
     ...otherProps
 }) => {
     return (
         <Pressable
             {...otherProps}
             renderToHardwareTextureAndroid
-            android_ripple={{ color: COLORS.LIGHT_GREY_COLOR,  foreground: true}}
-            style={[ styles.ripple,style]}
-            >
+            android_ripple={{ color: COLORS.LIGHT_GREY_COLOR, foreground: true }}
+            style={[styles.ripple, style]}>
             <View style={styles.container}>
                 <MaterialCommunityIcons name={icon} size={iconSize} color={iconColor} />
                 <RegularText style={styles.text} fontSize={2}>
