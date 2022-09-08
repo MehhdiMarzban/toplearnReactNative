@@ -1,7 +1,7 @@
 import { FlatList } from "react-native";
 import { useSelector } from "react-redux";
 
-import CourseList from "../../../components/Course/CourseList";
+import HorizontalCourseList from "../../../components/Course/HorizontalCourseList";
 import HomeLayout from "../../../components/Layouts/HomeLayout";
 
 const CoursesScreen = ({ navigation }) => {
@@ -16,7 +16,7 @@ const CoursesScreen = ({ navigation }) => {
             <FlatList
                 data={courses}
                 renderItem={({ item }) => (
-                    <CourseList
+                    <HorizontalCourseList
                         courses={item.courses}
                         listTitle={item.listTitle}
                         handleCourseClick={handleCourseClick}

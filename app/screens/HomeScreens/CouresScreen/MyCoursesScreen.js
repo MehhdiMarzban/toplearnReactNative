@@ -1,12 +1,21 @@
-import RegularText from "../../../components/CustomTexts/RegularText";
+
+import { useSelector } from "react-redux";
+
+import VerticalCourseList from "../../../components/Course/VerticalCourseList";
 import HomeLayout from "../../../components/Layouts/HomeLayout";
 
 
-const MyCoursesScreen = () => {
+const MyCoursesScreen = ({navigation}) => {
+    const ownCourses = useSelector(state => state.ownCourses);
+    
+    const handleCourseClick = (data) => {
+        navigation.navigate("SingleCourseScreen", data);
+    }
+
     return (
         <>
             <HomeLayout title="دوره های من">
-                <RegularText>دورهای کاربر گرامی</RegularText>
+                <VerticalCourseList data={ownCourses} handleCourseClick={handleCourseClick} />
             </HomeLayout>
         </>
     );

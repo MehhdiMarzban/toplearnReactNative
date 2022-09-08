@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image, Pressable, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import COLORS from "../../styles/colors.json";
@@ -13,6 +13,7 @@ const Card = ({
     title = "",
     teacher = "",
     price = 0,
+    fullWidth = false,
     offPercent = false,
     courseTime = "00:00:00",
     imageUrl = require("../../assets/courses/ReactNative.jpg"),
@@ -24,8 +25,15 @@ const Card = ({
     },
 }) => {
     return (
-        <TouchableOpacity style={styles.container} activeOpacity={0.7} onPress={handleCourseClick}>
-            <Image resizeMode="cover" style={styles.image} source={imageUrl} />
+        <TouchableOpacity
+            style={[styles.container, fullWidth && { width: "100%", height: 420 }]}
+            activeOpacity={0.7}
+            onPress={handleCourseClick}>
+            <Image
+                resizeMode="contain"
+                style={[styles.image, fullWidth && { height: 250 }]}
+                source={imageUrl}
+            />
             <View style={styles.cardBody}>
                 <BoldText style={styles.titleText} fontSize={1.6} numberOfLines={2}>
                     {title}

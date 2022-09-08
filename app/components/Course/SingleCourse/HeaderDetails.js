@@ -11,7 +11,7 @@ const HeaderDetails = ({ data }) => {
             <BoldText fontSize={2.2} style={styles.title}>
                 {data.title}
             </BoldText>
-            <RegularText style={styles.text} fontSize={1.8} selectable>
+            <RegularText style={styles.text} fontSize={1.8} >
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
                 گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
                 برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
