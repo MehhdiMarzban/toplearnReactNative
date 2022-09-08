@@ -6,7 +6,7 @@ import COLORS from "../../styles/colors.json";
 
 const AlertLayout = ({ title = "", children }) => {
     return (
-        <Modal hardwareAccelerated transparent statusBarTranslucent>
+        <Modal animationType="fade"  hardwareAccelerated transparent statusBarTranslucent>
             <View style={styles.modal}>
                 <View style={styles.container}>
                     <BoldText style={styles.headerText} fontSize={2}>

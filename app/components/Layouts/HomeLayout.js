@@ -2,11 +2,13 @@ import { StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import constants from "expo-constants";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useState } from "react";
 
 import COLORS from "../../styles/colors.json";
 import HeaderText from "../CustomTexts/HeaderText";
 import TabBarButton from "../CustomButtons/TabBarButton";
 import Badge from "../shared/Badge";
+import CartAlert from "../cart/CartAlert";
 
 const HomeLayout = ({
     children,
@@ -15,13 +17,23 @@ const HomeLayout = ({
     HeaderComponent = <></>,
     style,
 }) => {
+    const [showCart, setShowCart] = useState(false);
+
+    const handleShowCart = () => {
+        setShowCart(true);
+    };
+    const handleDismissCart = () => {
+        setShowCart(false);
+    };
+
     return (
         <>
             <View style={[styles.container, style]}>
                 {title ? (
                     <View style={styles.header}>
+                        {/* cart button */}
                         <View style={styles.basketButton}>
-                            <TabBarButton>
+                            <TabBarButton onPress={handleShowCart}>
                                 <MaterialCommunityIcons
                                     name="cart"
                                     size={30}
@@ -36,6 +48,8 @@ const HomeLayout = ({
                 ) : null}
                 <View style={styles.main}>{children}</View>
             </View>
+            {/* showing cart */}
+            {showCart && <CartAlert handleDismissCart={handleDismissCart} />}
             <StatusBar style="light" backgroundColor={COLORS.PRIMARY_COLOR} />
         </>
     );
@@ -73,7 +87,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: -8,
         left: -8,
-        paddingHorizontal: 6
+        paddingHorizontal: 6,
     },
 });
 
