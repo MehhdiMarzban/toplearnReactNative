@@ -8,13 +8,15 @@ import BoldText from "../CustomTexts/BoldText";
 import CartItem from "./CartItem";
 import Divider from "../shared/Divider";
 import { numberWithCommas, calculateSum } from "../../utils/price";
+import { useToplearnContext } from "../../hooks/useToplearnContext";
 
-const CartAlert = ({ handleDismissCart, handleDeleteCart, data = [1] }) => {
+const CartAlert = () => {
     const cartData = useSelector((state) => state.cart);
-
+    const { handleDeleteCart, handleDismissCart } = useToplearnContext();
+    
     return (
         <AlertLayout title="سبد خرید" handlePressOutsideAlert={handleDismissCart}>
-            {data.length === 0 ? (
+            {cartData.length === 0 ? (
                 <BoldText style={styles.headerText} fontSize={1.7}>
                     لیست خرید شما خالی است!
                 </BoldText>
@@ -33,17 +35,17 @@ const CartAlert = ({ handleDismissCart, handleDeleteCart, data = [1] }) => {
 
                     {/* TODO add cartList */}
                     <CustomPressableButton pressableStyle={styles.buttonMargin} title="پرداخت" />
+                    <CustomPressableButton
+                        pressableStyle={styles.buttonMargin}
+                        color={COLORS.RED_COLOR}
+                        onPress={() => {
+                            handleDeleteCart();
+                            handleDismissCart();
+                        }}
+                        title="حذف سفارش"
+                    />
                 </View>
             )}
-            <CustomPressableButton
-                pressableStyle={styles.buttonMargin}
-                color={COLORS.RED_COLOR}
-                onPress={() => {
-                    handleDeleteCart();
-                    handleDismissCart();
-                }}
-                title="حذف سفارش"
-            />
         </AlertLayout>
     );
 };

@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import { store } from "../../redux/store";
 import toastConfig from "../../utils/toastConfig";
 import NetAlert from "../shared/NetAlert";
+import { ToplearnProvider } from "../../context";
 
 //* add support rtl
 I18nManager.forceRTL(true);
@@ -33,9 +34,11 @@ export default function AppInitializer({ children }) {
     return (
         <>
             <Provider store={store}>
-                {children}
-                <Toast config={toastConfig} />
-                {isConnected ? null : <NetAlert />}
+                <ToplearnProvider>
+                    {children}
+                    <Toast config={toastConfig} />
+                    {isConnected ? null : <NetAlert />}
+                </ToplearnProvider>
             </Provider>
         </>
     );

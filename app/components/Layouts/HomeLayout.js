@@ -8,22 +8,11 @@ import COLORS from "../../styles/colors.json";
 import HeaderText from "../CustomTexts/HeaderText";
 import CartAlert from "../cart/CartAlert";
 import CartButton from "../cart/CartButton";
-import {deleteCartAction} from "../../redux/actions";
+import { useToplearnContext } from "../../hooks/useToplearnContext";
 
 const HomeLayout = ({ children, title = false, HeaderComponent = <></>, style }) => {
-    const [showCart, setShowCart] = useState(false);
-    const dispatch = useDispatch();
 
-    const handleShowCart = () => {
-        setShowCart(true);
-    };
-    const handleDismissCart = () => {
-        setShowCart(false);
-    };
-
-    const handleDeleteCart = () => {
-        dispatch(deleteCartAction());
-    };
+    const {showCart, handleShowCart} = useToplearnContext();
 
     return (
         <>
@@ -39,7 +28,7 @@ const HomeLayout = ({ children, title = false, HeaderComponent = <></>, style })
                 <View style={styles.main}>{children}</View>
             </View>
             {/* showing cart */}
-            {showCart && <CartAlert handleDeleteCart={handleDeleteCart} handleDismissCart={handleDismissCart} />}
+            {showCart && <CartAlert />}
             <StatusBar style="light" backgroundColor={COLORS.PRIMARY_COLOR} />
         </>
     );
