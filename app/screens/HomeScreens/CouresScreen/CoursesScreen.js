@@ -1,11 +1,23 @@
 import { FlatList } from "react-native";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Toast from "react-native-toast-message";
 
-import HorizontalCourseList from "../../../components/Course/HorizontalCourseList";
+import { updateCartAction } from "../../../redux/actions";
+import HorizontalCourseList from "../../../components/Course/CourseLists/HorizontalCourseList";
 import HomeLayout from "../../../components/Layouts/HomeLayout";
 
 const CoursesScreen = ({ navigation }) => {
+    const dispatch = useDispatch();
     const courses = useSelector((state) => state.courses);
+
+    const handleAddToCart = async (course) => {
+        await dispatch(updateCartAction(course));
+        Toast.show({
+            text2: `${course.title} به سبد خرید شما افزوده شد!`,
+            type: "info",
+            position: "bottom",
+        });
+    };
 
     const handleCourseClick = (data) => {
         navigation.navigate("SingleCourseScreen", data);
@@ -20,6 +32,7 @@ const CoursesScreen = ({ navigation }) => {
                         courses={item.courses}
                         listTitle={item.listTitle}
                         handleCourseClick={handleCourseClick}
+                        handleAddToCart={handleAddToCart}
                     />
                 )}
             />

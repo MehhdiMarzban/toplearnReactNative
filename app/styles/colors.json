@@ -3,11 +3,13 @@
     "WHITE_COLOR": "#FFFFFF",
     "LIGHT_BACKGROUND_COLOR": "#ccc",
     "LIGHT_GREY_COLOR": "lightgrey",
+    "VERY_LIGHT_COLOR": "#eee",
     "GREY_COLOR": "#555",
     "RED_COLOR": "#eb3b5a",
     "CYAN_COLOR": "#33d9b2",
     "RIPPLE_COLOR": "#ffffff40",
     "MAGENTA_PURPLE": "#6D214F",
     "TITLE_COLOR": "#334155",
-    "BODY_COLOR": "#374151"
+    "BODY_COLOR": "#374151",
+    "MODAL_BACKGROUND": "#00000090"
 }

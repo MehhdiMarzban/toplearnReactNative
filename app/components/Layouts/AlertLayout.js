@@ -1,34 +1,49 @@
-import { Modal, StyleSheet, View } from "react-native";
+import { Modal, StyleSheet, TouchableWithoutFeedback, View } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import BoldText from "../CustomTexts/BoldText";
 import Divider from "../shared/Divider";
 import COLORS from "../../styles/colors.json";
+import TabBarButton from "../CustomButtons/TabBarButton";
 
-const AlertLayout = ({ title = "", children }) => {
+const AlertLayout = ({ title = "", children, handlePressOutsideAlert = () => null }) => {
     return (
-        <Modal animationType="fade"  hardwareAccelerated transparent statusBarTranslucent>
-            <View style={styles.modal}>
-                <View style={styles.container}>
-                    <BoldText style={styles.headerText} fontSize={2}>
-                        {title}
-                    </BoldText>
-                    <Divider style={styles.divider} />
-                    {children}
+        <Modal animationType="fade" hardwareAccelerated transparent statusBarTranslucent>
+            <TouchableWithoutFeedback onPress={handlePressOutsideAlert}>
+                <View style={styles.modal}>
+                    <TouchableWithoutFeedback>
+                        <View style={styles.container}>
+                            <BoldText style={styles.headerText} fontSize={2}>
+                                {title}
+                            </BoldText>
+                            <TabBarButton
+                                style={styles.closeButton}
+                                onPress={handlePressOutsideAlert}>
+                                <MaterialCommunityIcons
+                                    name="close"
+                                    size={30}
+                                    color={COLORS.LIGHT_BACKGROUND_COLOR}
+                                />
+                            </TabBarButton>
+                            <Divider style={styles.divider} />
+                            {children}
+                        </View>
+                    </TouchableWithoutFeedback>
                 </View>
-            </View>
+            </TouchableWithoutFeedback>
         </Modal>
     );
 };
 
 const styles = StyleSheet.create({
     modal: {
-        backgroundColor: "#00000090",
+        backgroundColor: COLORS.MODAL_BACKGROUND,
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
     },
     container: {
-        width: "80%",
+        width: "90%",
         backgroundColor: COLORS.WHITE_COLOR,
         borderRadius: 10,
         padding: 10,
@@ -38,6 +53,11 @@ const styles = StyleSheet.create({
     },
     divider: {
         marginVertical: 5,
+    },
+    closeButton: {
+        position: "absolute",
+        top: 2,
+        left: 2,
     },
 });
 

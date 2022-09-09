@@ -1,14 +1,19 @@
 import { FlatList, StyleSheet, View } from "react-native";
-import BoldText from "../CustomTexts/BoldText";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import Card from "../shared/Card";
-import COLORS from "../../styles/colors.json";
-import HorizontalCardSeparator from "../shared/HorizontalCardSeparator";
-import Divider from "../shared/Divider";
-import BareButton from "../CustomButtons/BareButton";
+import BoldText from "../../CustomTexts/BoldText";
+import Card from "../../shared/Card";
+import COLORS from "../../../styles/colors.json";
+import HorizontalCardSeparator from "../../shared/HorizontalCardSeparator";
+import Divider from "../../shared/Divider";
+import BareButton from "../../CustomButtons/BareButton";
 
-const HorizontalCourseList = ({ courses = [], listTitle = "", handleCourseClick = () => {} }) => {
+const HorizontalCourseList = ({
+    courses = [],
+    listTitle = "",
+    handleCourseClick = () => null,
+    handleAddToCart = () => null,
+}) => {
     return (
         <View style={styles.flatListContainer}>
             <View style={styles.moreContainer}>
@@ -34,6 +39,7 @@ const HorizontalCourseList = ({ courses = [], listTitle = "", handleCourseClick 
                         handleCourseClick={() => {
                             handleCourseClick(item);
                         }}
+                        handleAddToCart={() => {handleAddToCart(item)}}
                         title={item.title}
                         price={item.price}
                         teacher={item.teacher}

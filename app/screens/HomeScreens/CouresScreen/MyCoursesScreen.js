@@ -1,7 +1,7 @@
 
 import { useSelector } from "react-redux";
 
-import VerticalCourseList from "../../../components/Course/VerticalCourseList";
+import VerticalCourseList from "../../../components/Course/CourseLists/VerticalCourseList";
 import HomeLayout from "../../../components/Layouts/HomeLayout";
 
 

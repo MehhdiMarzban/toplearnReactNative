@@ -17,7 +17,7 @@ const Card = ({
     offPercent = false,
     courseTime = "00:00:00",
     imageUrl = require("../../assets/courses/ReactNative.jpg"),
-    detailOnPress = () => {
+    handleAddToCart = () => {
         return null;
     },
     handleCourseClick = () => {
@@ -83,7 +83,7 @@ const Card = ({
                 </View>
                 <Divider />
                 <View style={styles.buttonContainer}>
-                    <TabBarButton style={styles.cardButton} onPress={handleCourseClick}>
+                    <TabBarButton style={styles.cardButton} onPress={handleAddToCart}>
                         <MaterialCommunityIcons name="cart-plus" size={30} />
                     </TabBarButton>
                     <TabBarButton style={styles.cardButton} onPress={handleCourseClick}>

@@ -1,6 +1,7 @@
 import { StyleSheet, FlatList } from "react-native";
-import Card from "../shared/Card";
-import VerticalCardSeparator from "../shared/VerticalCardSeparator";
+
+import Card from "../../shared/Card";
+import VerticalCardSeparator from "../../shared/VerticalCardSeparator";
 
 const VerticalCourseList = ({ data = [], handleCourseClick = () => null }) => {
     return (
