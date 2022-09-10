@@ -1,8 +1,7 @@
 import { createContext, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Toast from "react-native-toast-message";
+import { useDispatch } from "react-redux";
 
-import { updateCartAction, deleteCartAction } from "../redux/actions";
+import { updateCartAction, deleteCartAction, deleteOneCartAction } from "../redux/actions";
 
 //* define context here
 export const ToplearnContext = createContext({
@@ -10,6 +9,7 @@ export const ToplearnContext = createContext({
     showCart: false,
     handleDismissCart: () => null,
     handleDeleteCart: () => null,
+    handleDeleteOneItemCart: () => null,
     handleShowCart: () => null,
     handleAddToCart: () => null,
 });
@@ -18,7 +18,6 @@ export const ToplearnContext = createContext({
 export const ToplearnProvider = ({ children }) => {
     //* initial values
     const dispatch = useDispatch();
-    const cartData = useSelector((state) => state.cart);
 
     //* cart
     const [showCart, setShowCart] = useState(false);
@@ -34,24 +33,12 @@ export const ToplearnProvider = ({ children }) => {
         dispatch(deleteCartAction());
     };
 
-    //* course card
+    const handleDeleteOneItemCart = (deleteId) => {
+        dispatch(deleteOneCartAction(deleteId));
+    };
+    
     const handleAddToCart = async (course) => {
-        const isAlreadyExist = cartData.find((item) => item.id === course.id);
-        if (isAlreadyExist) {
-            Toast.show({
-                text2: `${course.title} در سبد خرید شما موجود است!`,
-                type: "info",
-                position: "bottom",
-            });
-            return;
-        }
-
-        await dispatch(updateCartAction(course));
-        Toast.show({
-            text2: `${course.title} به سبد خرید شما افزوده شد!`,
-            type: "info",
-            position: "bottom",
-        });
+        dispatch(updateCartAction(course));
     };
 
     return (
@@ -61,6 +48,7 @@ export const ToplearnProvider = ({ children }) => {
                 handleShowCart,
                 handleDismissCart,
                 handleDeleteCart,
+                handleDeleteOneItemCart,
                 handleAddToCart,
             }}>
             {children}

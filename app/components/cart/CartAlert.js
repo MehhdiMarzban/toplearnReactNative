@@ -12,10 +12,13 @@ import CartItemsList from "./CartItemsList";
 
 const CartAlert = () => {
     const cartData = useSelector((state) => state.cart);
-    const { handleDeleteCart, handleDismissCart } = useToplearnContext();
-    
+    const { handleDeleteCart, handleDismissCart, showCart } = useToplearnContext();
+
     return (
-        <AlertLayout title="سبد خرید" handlePressOutsideAlert={handleDismissCart}>
+        <AlertLayout
+            title="سبد خرید"
+            handlePressOutsideAlert={handleDismissCart}
+            isVisible={showCart}>
             {cartData.length === 0 ? (
                 <BoldText style={styles.headerText} fontSize={1.7}>
                     لیست خرید شما خالی است!

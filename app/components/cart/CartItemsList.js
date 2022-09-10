@@ -3,23 +3,26 @@ import { useSelector } from "react-redux";
 
 import Divider from "../shared/Divider";
 import CartItem from "./CartItem";
+import { useToplearnContext } from "../../hooks/useToplearnContext";
 
 const CartItemsList = () => {
     const cartData = useSelector((state) => state.cart);
+    const { handleDeleteOneItemCart } = useToplearnContext();
+
     return (
         <View style={styles.container}>
             <FlatList
                 data={cartData}
                 ItemSeparatorComponent={() => <Divider style={styles.divider} />}
                 contentContainerStyle={styles.flatList}
-                keyExtractor={(item, index) => index.toString()}
-                renderItem={({ item, index }) => (
-                        <CartItem
-                            title={item.title}
-                            image={item.image}
-                            price={item.price}
-                            handleDelete={() => null}
-                        />
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item }) => (
+                    <CartItem
+                        title={item.title}
+                        image={item.image}
+                        price={item.price}
+                        handleDeleteOneItemCart={() => handleDeleteOneItemCart(item.id)}
+                    />
                 )}
             />
         </View>

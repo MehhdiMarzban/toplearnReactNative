@@ -6,9 +6,19 @@ import Divider from "../shared/Divider";
 import COLORS from "../../styles/colors.json";
 import TabBarButton from "../CustomButtons/TabBarButton";
 
-const AlertLayout = ({ title = "", children, handlePressOutsideAlert = () => null }) => {
+const AlertLayout = ({
+    title = "",
+    children,
+    handlePressOutsideAlert = () => null,
+    isVisible = false,
+}) => {
     return (
-        <Modal animationType="fade" hardwareAccelerated transparent statusBarTranslucent>
+        <Modal
+            visible={isVisible}
+            animationType="fade"
+            hardwareAccelerated
+            transparent
+            statusBarTranslucent>
             <TouchableWithoutFeedback onPress={handlePressOutsideAlert}>
                 <View style={styles.modal}>
                     <TouchableWithoutFeedback>

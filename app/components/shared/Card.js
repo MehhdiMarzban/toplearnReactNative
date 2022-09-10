@@ -51,7 +51,7 @@ const Card = ({
                         </RegularText>
                     </View>
                     <View style={styles.courseTime}>
-                        <RegularText fontSize={1.3}>{item.courseTime}</RegularText>
+                        <RegularText fontSize={1.3}>{item.time}</RegularText>
                     </View>
                 </View>
                 <View style={styles.priceContainer}>

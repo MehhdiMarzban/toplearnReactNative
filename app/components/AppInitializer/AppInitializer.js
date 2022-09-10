@@ -9,6 +9,7 @@ import { store } from "../../redux/store";
 import toastConfig from "../../utils/toastConfig";
 import NetAlert from "../shared/NetAlert";
 import { ToplearnProvider } from "../../context";
+import CartAlert from "../cart/CartAlert";
 
 //* add support rtl
 I18nManager.forceRTL(true);
@@ -37,6 +38,8 @@ export default function AppInitializer({ children }) {
                 <ToplearnProvider>
                     {children}
                     <Toast config={toastConfig} />
+                    {/* showing cart */}
+                    <CartAlert />
                     {isConnected ? null : <NetAlert />}
                 </ToplearnProvider>
             </Provider>

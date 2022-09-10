@@ -9,8 +9,8 @@ import { numberWithCommas } from "../../utils/price";
 const CartItem = ({
     title = "",
     image = require("../../assets/courses/Electron.jpg"),
-    handleDelete = () => null,
     price = "0",
+    handleDeleteOneItemCart = () => null,
 }) => {
     return (
         //* TODO fix work without TouchableWithoutFeedback
@@ -24,7 +24,7 @@ const CartItem = ({
                     <RegularText style={styles.priceText} fontSize={1.7}>
                         {numberWithCommas(price)}
                     </RegularText>
-                    <TabBarButton onPress={handleDelete}>
+                    <TabBarButton onPress={handleDeleteOneItemCart}>
                         <MaterialCommunityIcons name="delete" size={24} color={COLORS.GREY_COLOR} />
                     </TabBarButton>
                 </View>
