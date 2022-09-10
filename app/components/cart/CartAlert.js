@@ -5,10 +5,10 @@ import AlertLayout from "../Layouts/AlertLayout";
 import CustomPressableButton from "../CustomButtons/CustomPressableButton";
 import COLORS from "../../styles/colors.json";
 import BoldText from "../CustomTexts/BoldText";
-import CartItem from "./CartItem";
 import Divider from "../shared/Divider";
 import { numberWithCommas, calculateSum } from "../../utils/price";
 import { useToplearnContext } from "../../hooks/useToplearnContext";
+import CartItemsList from "./CartItemsList";
 
 const CartAlert = () => {
     const cartData = useSelector((state) => state.cart);
@@ -23,11 +23,7 @@ const CartAlert = () => {
             ) : (
                 <View>
                     {/* TODO add cartList */}
-                    <CartItem />
-                    <Divider style={{ marginVertical: 4 }} />
-                    <CartItem />
-                    <Divider style={{ marginVertical: 4 }} />
-                    <CartItem />
+                    <CartItemsList />
                     <Divider style={{ marginVertical: 6, height: 4 }} />
                     <BoldText fontSize={1.8} style={styles.cartSumPrice}>
                         جمع کل صورت حساب : {numberWithCommas(calculateSum(cartData))} تومان

@@ -6,16 +6,14 @@ import COLORS from "../../styles/colors.json";
 import TabBarButton from "../CustomButtons/TabBarButton";
 import Badge from "../shared/Badge";
 
-const CartButton = ({handleOnPress = () => null}) => {
+const CartButton = ({ handleOnPress = () => null }) => {
     const cartData = useSelector((state) => state.cart);
 
     return (
-        <View style={styles.basketButton}>
-            <TabBarButton onPress={handleOnPress}>
-                <MaterialCommunityIcons name="cart" size={30} color={COLORS.WHITE_COLOR} />
-                <Badge style={styles.basketBadge}>{cartData.length}</Badge>
-            </TabBarButton>
-        </View>
+        <TabBarButton style={styles.basketButton} onPress={handleOnPress}>
+            <MaterialCommunityIcons name="cart" size={30} color={COLORS.WHITE_COLOR} />
+            <Badge style={styles.basketBadge}>{cartData.length}</Badge>
+        </TabBarButton>
     );
 };
 

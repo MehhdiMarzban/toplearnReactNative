@@ -8,35 +8,36 @@ import { numberWithCommas } from "../../utils/price";
 import Badge from "./Badge";
 import Divider from "./Divider";
 import TabBarButton from "../CustomButtons/TabBarButton";
+import { useToplearnContext } from "../../hooks/useToplearnContext";
+import { useToplearnNavigation } from "../../hooks/useTopLearnNavigation";
 
 const Card = ({
-    title = "",
-    teacher = "",
-    price = 0,
-    fullWidth = false,
-    offPercent = false,
-    courseTime = "00:00:00",
-    imageUrl = require("../../assets/courses/ReactNative.jpg"),
-    handleAddToCart = () => {
-        return null;
+    item = {
+        title: "",
+        teacher: "",
+        price: 0,
+        offPercent: false,
+        courseTime: "00:00:00",
+        imageUrl: require("../../assets/courses/ReactNative.jpg"),
     },
-    handleCourseClick = () => {
-        return null;
-    },
+    fullWidth= false,
 }) => {
+    const { handleAddToCart } = useToplearnContext();
+    const {handleCourseClick} = useToplearnNavigation();
+    
     return (
         <TouchableOpacity
             style={[styles.container, fullWidth && { width: "100%", height: 420 }]}
             activeOpacity={0.7}
-            onPress={handleCourseClick}>
+            onPress={() => {handleCourseClick(item)}}>
             <Image
                 resizeMode="contain"
                 style={[styles.image, fullWidth && { height: 250 }]}
-                source={imageUrl}
+                source={item.image}
             />
             <View style={styles.cardBody}>
                 <BoldText style={styles.titleText} fontSize={1.6} numberOfLines={2}>
-                    {title}
+                    {item.title}
                 </BoldText>
                 <View style={styles.infoContainer}>
                     <View style={styles.teacherContainer}>
@@ -46,11 +47,11 @@ const Card = ({
                             color={COLORS.LIGHT_GREY_COLOR}
                         />
                         <RegularText style={styles.teacherText} fontSize={1.3}>
-                            {teacher}
+                            {item.teacher}
                         </RegularText>
                     </View>
                     <View style={styles.courseTime}>
-                        <RegularText fontSize={1.3}>{courseTime}</RegularText>
+                        <RegularText fontSize={1.3}>{item.courseTime}</RegularText>
                     </View>
                 </View>
                 <View style={styles.priceContainer}>
@@ -60,19 +61,19 @@ const Card = ({
                             size={20}
                             color={COLORS.LIGHT_GREY_COLOR}
                         />
-                        {price === 0 ? (
+                        {item.price === 0 ? (
                             <BoldText style={styles.teacherText} fontSize={1.3}>
                                 رایگان
                             </BoldText>
                         ) : (
                             <RegularText style={styles.teacherText} fontSize={1.3}>
-                                {numberWithCommas(price)} تومان
+                                {numberWithCommas(item.price)} تومان
                             </RegularText>
                         )}
                     </View>
-                    {offPercent && (
+                    {item.offPercent && (
                         <Badge>
-                            {offPercent}{" "}
+                            {item.offPercent}{" "}
                             <MaterialCommunityIcons
                                 name="brightness-percent"
                                 size={10}
@@ -83,10 +84,10 @@ const Card = ({
                 </View>
                 <Divider />
                 <View style={styles.buttonContainer}>
-                    <TabBarButton style={styles.cardButton} onPress={handleAddToCart}>
+                    <TabBarButton style={styles.cardButton} onPress={() => {handleAddToCart(item)}}>
                         <MaterialCommunityIcons name="cart-plus" size={30} />
                     </TabBarButton>
-                    <TabBarButton style={styles.cardButton} onPress={handleCourseClick}>
+                    <TabBarButton style={styles.cardButton} onPress={() => handleCourseClick(item)}>
                         <MaterialCommunityIcons name="shopping-search" size={30} />
                     </TabBarButton>
                 </View>

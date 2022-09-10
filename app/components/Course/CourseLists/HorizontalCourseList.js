@@ -11,8 +11,6 @@ import BareButton from "../../CustomButtons/BareButton";
 const HorizontalCourseList = ({
     courses = [],
     listTitle = "",
-    handleCourseClick = () => null,
-    handleAddToCart = () => null,
 }) => {
     return (
         <View style={styles.flatListContainer}>
@@ -36,16 +34,7 @@ const HorizontalCourseList = ({
                 ItemSeparatorComponent={HorizontalCardSeparator}
                 renderItem={({ item }) => (
                     <Card
-                        handleCourseClick={() => {
-                            handleCourseClick(item);
-                        }}
-                        handleAddToCart={() => {handleAddToCart(item)}}
-                        title={item.title}
-                        price={item.price}
-                        teacher={item.teacher}
-                        imageUrl={item.image}
-                        offPercent={item.offPercent}
-                        courseTime={item.time}
+                        item={item}
                     />
                 )}
             />
