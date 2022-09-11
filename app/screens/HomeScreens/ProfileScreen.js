@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import * as imagePicker from "expo-image-picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import IconButton from "../../components/CustomButtons/IconButton";
-import RegularText from "../../components/CustomTexts/RegularText";
+import IconButton from "../../components/Buttons/IconButton";
+import RegularText from "../../components/Texts/RegularText";
 import HomeLayout from "../../components/Layouts/HomeLayout";
 import Divider from "../../components/shared/Divider";
 import COLORS from "../../styles/colors.json";

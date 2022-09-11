@@ -3,7 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import constants from "expo-constants";
 
 import COLORS from "../../styles/colors.json";
-import HeaderText from "../CustomTexts/HeaderText";
+import HeaderText from "../Texts/HeaderText";
 import CartButton from "../cart/CartButton";
 import { useToplearnContext } from "../../hooks/useToplearnContext";
 

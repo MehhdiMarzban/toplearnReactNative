@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity, Vibration } from "react-native";
 
-import BoldText from "../CustomTexts/BoldText";
+import BoldText from "../Texts/BoldText";
 
 const CustomOpacityButton = ({
     onPress = () => null,

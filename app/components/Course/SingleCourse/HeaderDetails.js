@@ -1,7 +1,7 @@
 import { Image, View, StyleSheet, Dimensions } from "react-native";
 
-import BoldText from "../../CustomTexts/BoldText";
-import RegularText from "../../CustomTexts/RegularText";
+import BoldText from "../../Texts/BoldText";
+import RegularText from "../../Texts/RegularText";
 import COLORS from "../../../styles/colors.json";
 
 const HeaderDetails = ({ data }) => {

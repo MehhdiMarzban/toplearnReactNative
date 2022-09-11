@@ -1,6 +1,6 @@
 import { View, StyleSheet, FlatList } from "react-native";
 
-import BoldText from "../../CustomTexts/BoldText";
+import BoldText from "../../Texts/BoldText";
 import DownloadItem from "./DownloadItem";
 import COLORS from "../../../styles/colors.json";
 

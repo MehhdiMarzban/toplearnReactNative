@@ -1,8 +1,8 @@
 import { TouchableOpacity, View, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import BoldText from "../../CustomTexts/BoldText";
-import RegularText from "../../CustomTexts/RegularText";
+import BoldText from "../../Texts/BoldText";
+import RegularText from "../../Texts/RegularText";
 import COLORS from "../../../styles/colors.json";
 
 const DownloadItem = ({ data: { item } }) => {

@@ -2,7 +2,7 @@ import { Formik } from "formik";
 import { View, StyleSheet, Keyboard } from "react-native";
 import Toast from "react-native-toast-message";
 
-import BareButton from "../components/CustomButtons/BareButton";
+import BareButton from "../components/Buttons/BareButton";
 import WideLayout from "../components/Layouts/WideLayout";
 import { loginSchema } from "../validations/formValidations";
 import { FormikTextField, FormikSubmitButton } from "../components/Formik";

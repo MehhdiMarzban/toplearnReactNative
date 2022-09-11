@@ -1,17 +1,14 @@
 import { FlatList, StyleSheet, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import BoldText from "../../CustomTexts/BoldText";
+import BoldText from "../../Texts/BoldText";
 import Card from "../../shared/Card";
 import COLORS from "../../../styles/colors.json";
 import HorizontalCardSeparator from "../../shared/HorizontalCardSeparator";
 import Divider from "../../shared/Divider";
-import BareButton from "../../CustomButtons/BareButton";
+import BareButton from "../../Buttons/BareButton";
 
-const HorizontalCourseList = ({
-    courses = [],
-    listTitle = "",
-}) => {
+const HorizontalCourseList = ({ courses = [], listTitle = "" }) => {
     return (
         <View style={styles.flatListContainer}>
             <View style={styles.moreContainer}>
@@ -32,11 +29,7 @@ const HorizontalCourseList = ({
                 // ListHeaderComponentStyle={{marginLeft: 20}}
                 contentContainerStyle={{ paddingVertical: 30, paddingHorizontal: 10 }}
                 ItemSeparatorComponent={HorizontalCardSeparator}
-                renderItem={({ item }) => (
-                    <Card
-                        item={item}
-                    />
-                )}
+                renderItem={({ item }) => <Card item={item} />}
             />
         </View>
     );

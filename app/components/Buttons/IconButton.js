@@ -2,7 +2,7 @@ import { Pressable, View, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import COLORS from "../../styles/colors.json";
-import RegularText from "../CustomTexts/RegularText";
+import RegularText from "../Texts/RegularText";
 
 const IconButton = ({
     icon = "account",

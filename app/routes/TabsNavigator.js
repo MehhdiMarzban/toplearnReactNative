@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import { ProfileScreen, CoursesScreen, MyCoursesScreen } from "../screens";
-import TabBarButton from "../components/CustomButtons/TabBarButton";
+import TabBarButton from "../components/Buttons/TabBarButton";
 import COLORS from "../styles/colors.json";
 
 const Tab = createBottomTabNavigator();

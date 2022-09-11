@@ -2,12 +2,12 @@ import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import COLORS from "../../styles/colors.json";
-import BoldText from "../CustomTexts/BoldText";
-import RegularText from "../CustomTexts/RegularText";
+import BoldText from "../Texts/BoldText";
+import RegularText from "../Texts/RegularText";
 import { numberWithCommas } from "../../utils/price";
 import Badge from "./Badge";
 import Divider from "./Divider";
-import TabBarButton from "../CustomButtons/TabBarButton";
+import TabBarButton from "../Buttons/TabBarButton";
 import { useToplearnContext } from "../../hooks/useToplearnContext";
 import { useToplearnNavigation } from "../../hooks/useTopLearnNavigation";
 

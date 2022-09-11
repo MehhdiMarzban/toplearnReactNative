@@ -1,9 +1,9 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useSelector } from "react-redux";
 
 import COLORS from "../../styles/colors.json";
-import TabBarButton from "../CustomButtons/TabBarButton";
+import TabBarButton from "../Buttons/TabBarButton";
 import Badge from "../shared/Badge";
 
 const CartButton = ({ handleOnPress = () => null }) => {

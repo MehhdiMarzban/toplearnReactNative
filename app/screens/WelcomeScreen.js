@@ -3,8 +3,8 @@ import { StatusBar } from "expo-status-bar";
 import constants from "expo-constants";
 import * as Notification from "expo-notifications";
 
-import CustomOpacityButton from "../components/CustomButtons/CustomOpacityButton";
-import BoldText from "../components/CustomTexts/BoldText";
+import CustomOpacityButton from "../components/Buttons/CustomOpacityButton";
+import BoldText from "../components/Texts/BoldText";
 import COLORS from "../styles/colors.json";
 import useDoubleClickExit from "../hooks/useDoubleClickExit";
 
@@ -63,8 +63,6 @@ const notificationHandler = async () => {
             data: { data: "https://mehdi-marzban.ir" },
             vibrate: true,
             badge: 2,
-            color: COLORS.MAGENTA_PURPLE,
-            launchImageName: "icon.png"
         },
         trigger: { seconds: 2 },
     });

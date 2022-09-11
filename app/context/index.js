@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { BackHandler } from "react-native";
 import { useDispatch } from "react-redux";
 
 import { updateCartAction, deleteCartAction, deleteOneCartAction } from "../redux/actions";
@@ -12,6 +13,7 @@ export const ToplearnContext = createContext({
     handleDeleteOneItemCart: () => null,
     handleShowCart: () => null,
     handleAddToCart: () => null,
+    handleExit: () => {},
 });
 
 //* define provider here
@@ -36,9 +38,14 @@ export const ToplearnProvider = ({ children }) => {
     const handleDeleteOneItemCart = (deleteId) => {
         dispatch(deleteOneCartAction(deleteId));
     };
-    
+
     const handleAddToCart = async (course) => {
         dispatch(updateCartAction(course));
+    };
+
+    //* exit app
+    const handleExit = () => {
+        BackHandler.exitApp();
     };
 
     return (
@@ -50,6 +57,7 @@ export const ToplearnProvider = ({ children }) => {
                 handleDeleteCart,
                 handleDeleteOneItemCart,
                 handleAddToCart,
+                handleExit,
             }}>
             {children}
         </ToplearnContext.Provider>

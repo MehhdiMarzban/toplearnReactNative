@@ -2,8 +2,8 @@ import { StyleSheet, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { calculatePercent, numberWithCommas } from "../../utils/price";
-import RegularText from "../CustomTexts/RegularText";
-import BoldText from "../CustomTexts/BoldText";
+import RegularText from "../Texts/RegularText";
+import BoldText from "../Texts/BoldText";
 import COLORS from "../../styles/colors.json";
 
 const Price = ({ price, offPercent = 0 }) => {

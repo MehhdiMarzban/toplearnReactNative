@@ -1,7 +1,7 @@
 import { View, StyleSheet } from "react-native";
 
-import BoldText from "../../components/CustomTexts/BoldText";
-import RegularText from "../../components/CustomTexts/RegularText";
+import BoldText from "../Texts/BoldText";
+import RegularText from "../Texts/RegularText";
 import COLORS from "../../styles/colors.json";
 
 const Toast = (props) => {

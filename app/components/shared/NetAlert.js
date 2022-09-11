@@ -1,16 +1,18 @@
-import { StyleSheet, BackHandler } from "react-native";
+import { StyleSheet } from "react-native";
 
-import RegularText from "../CustomTexts/RegularText";
-import CustomPressableButton from "../CustomButtons/CustomPressableButton";
+import RegularText from "../Texts/RegularText";
+import CustomPressableButton from "../Buttons/CustomPressableButton";
 import AlertLayout from "../Layouts/AlertLayout";
+import { useToplearnContext } from "../../hooks/useToplearnContext";
+import { useNetworkConnection } from "../../hooks/useNetworkConnection";
 
 const NetAlert = () => {
-    const handleExit = () => {
-        BackHandler.exitApp();
-    };
+    const { handleExit } = useToplearnContext();
+    const isConnected = useNetworkConnection();
+    
     return (
         <>
-            <AlertLayout title="توجه">
+            <AlertLayout title="توجه" isVisible={!isConnected} showCloseButton={false}>
                 <RegularText style={styles.bodyText} fontSize={1.5}>
                     شما برای استفاده از این برنامه نیازمند اینترنت هستید!
                 </RegularText>

@@ -1,16 +1,17 @@
 import { Modal, StyleSheet, TouchableWithoutFeedback, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import BoldText from "../CustomTexts/BoldText";
+import BoldText from "../Texts/BoldText";
 import Divider from "../shared/Divider";
 import COLORS from "../../styles/colors.json";
-import TabBarButton from "../CustomButtons/TabBarButton";
+import TabBarButton from "../Buttons/TabBarButton";
 
 const AlertLayout = ({
     title = "",
     children,
     handlePressOutsideAlert = () => null,
     isVisible = false,
+    showCloseButton = true,
 }) => {
     return (
         <Modal
@@ -26,15 +27,17 @@ const AlertLayout = ({
                             <BoldText style={styles.headerText} fontSize={2}>
                                 {title}
                             </BoldText>
-                            <TabBarButton
-                                style={styles.closeButton}
-                                onPress={handlePressOutsideAlert}>
-                                <MaterialCommunityIcons
-                                    name="close"
-                                    size={30}
-                                    color={COLORS.LIGHT_BACKGROUND_COLOR}
-                                />
-                            </TabBarButton>
+                            {showCloseButton && (
+                                <TabBarButton
+                                    style={styles.closeButton}
+                                    onPress={handlePressOutsideAlert}>
+                                    <MaterialCommunityIcons
+                                        name="close"
+                                        size={30}
+                                        color={COLORS.LIGHT_BACKGROUND_COLOR}
+                                    />
+                                </TabBarButton>
+                            )}
                             <Divider style={styles.divider} />
                             {children}
                         </View>

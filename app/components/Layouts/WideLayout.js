@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { Image, Keyboard, TouchableWithoutFeedback, StyleSheet, View } from "react-native";
 import globalStyles from "../../styles/globalStyles";
-import BoldText from "../CustomTexts/BoldText";
+import BoldText from "../Texts/BoldText";
 
 const WideLayout = ({ children = <></>, title = "" }) => {
     return (

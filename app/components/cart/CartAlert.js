@@ -2,9 +2,9 @@ import { View, StyleSheet } from "react-native";
 import { useSelector } from "react-redux";
 
 import AlertLayout from "../Layouts/AlertLayout";
-import CustomPressableButton from "../CustomButtons/CustomPressableButton";
+import CustomPressableButton from "../Buttons/CustomPressableButton";
 import COLORS from "../../styles/colors.json";
-import BoldText from "../CustomTexts/BoldText";
+import BoldText from "../Texts/BoldText";
 import Divider from "../shared/Divider";
 import { numberWithCommas, calculateSum } from "../../utils/price";
 import { useToplearnContext } from "../../hooks/useToplearnContext";

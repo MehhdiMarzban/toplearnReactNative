@@ -2,8 +2,8 @@ import { View, StyleSheet, Image, TouchableWithoutFeedback } from "react-native"
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import COLORS from "../../styles/colors.json";
-import RegularText from "../CustomTexts/RegularText";
-import TabBarButton from "../CustomButtons/TabBarButton";
+import RegularText from "../Texts/RegularText";
+import TabBarButton from "../Buttons/TabBarButton";
 import { numberWithCommas } from "../../utils/price";
 
 const CartItem = ({

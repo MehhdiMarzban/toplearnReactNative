@@ -1,9 +1,9 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { StyleSheet, View } from "react-native";
 
-import CustomPressableButton from "../../CustomButtons/CustomPressableButton";
+import CustomPressableButton from "../../Buttons/CustomPressableButton";
 import Badge from "../../shared/Badge";
-import RegularText from "../../CustomTexts/RegularText";
+import RegularText from "../../Texts/RegularText";
 import Price from "../../shared/Price";
 import COLORS from "../../../styles/colors.json";
 import { useToplearnContext } from "../../../hooks/useToplearnContext";

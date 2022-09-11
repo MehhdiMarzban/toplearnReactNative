@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet } from "react-native";
 
-import BoldText from "../CustomTexts/BoldText";
+import BoldText from "../Texts/BoldText";
 import COLORS from "../../styles/colors.json";
 
 const CustomPressableButton = ({

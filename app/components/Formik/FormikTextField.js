@@ -1,4 +1,4 @@
-import CustomInput from "../CustomInputs/CustomInput";
+import CustomInput from "../Inputs/CustomInput";
 import ErrorText from "./FormikErrorText";
 import {useFormikContext} from "formik";
 
