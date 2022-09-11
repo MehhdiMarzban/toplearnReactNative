@@ -23,12 +23,15 @@ export default function AppInitializer({ children }) {
 
     return (
         <>
+            {/* initialize Redux */}
             <Provider store={store}>
+                {/* initialize ContextAPI */}
                 <ToplearnProvider>
                     {children}
                     <Toast config={toastConfig} />
                     {/* showing cart */}
                     <CartAlert />
+                    {/* showing alert when network connection be lost */}
                     <NetAlert />
                 </ToplearnProvider>
             </Provider>

@@ -62,6 +62,8 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         paddingTop: 6,
         elevation: 10,
+        borderTopWidth: 1,
+        borderTopColor: COLORS.VERY_LIGHT_COLOR,
     },
     bottomContainerTop: {
         paddingHorizontal: 10,

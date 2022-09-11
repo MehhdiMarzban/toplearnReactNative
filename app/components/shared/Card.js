@@ -20,16 +20,18 @@ const Card = ({
         courseTime: "00:00:00",
         imageUrl: require("../../assets/courses/ReactNative.jpg"),
     },
-    fullWidth= false,
+    fullWidth = false,
 }) => {
     const { handleAddToCart } = useToplearnContext();
-    const {handleCourseClick} = useToplearnNavigation();
-    
+    const { handleCourseClick } = useToplearnNavigation();
+
     return (
         <TouchableOpacity
             style={[styles.container, fullWidth && { width: "100%", height: 420 }]}
             activeOpacity={0.7}
-            onPress={() => {handleCourseClick(item)}}>
+            onPress={() => {
+                handleCourseClick(item);
+            }}>
             <Image
                 resizeMode="contain"
                 style={[styles.image, fullWidth && { height: 250 }]}
@@ -84,7 +86,11 @@ const Card = ({
                 </View>
                 <Divider />
                 <View style={styles.buttonContainer}>
-                    <TabBarButton style={styles.cardButton} onPress={() => {handleAddToCart(item)}}>
+                    <TabBarButton
+                        style={styles.cardButton}
+                        onPress={() => {
+                            handleAddToCart(item);
+                        }}>
                         <MaterialCommunityIcons name="cart-plus" size={30} />
                     </TabBarButton>
                     <TabBarButton style={styles.cardButton} onPress={() => handleCourseClick(item)}>

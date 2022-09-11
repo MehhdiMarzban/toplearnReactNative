@@ -1,6 +1,7 @@
+import {useFormikContext} from "formik";
+
 import CustomInput from "../Inputs/CustomInput";
 import ErrorText from "./FormikErrorText";
-import {useFormikContext} from "formik";
 
 const FormikTextField = ({ name, ...otherProps }) => {
     const {handleBlur, handleChange, values, errors, touched}  = useFormikContext();

@@ -7,9 +7,11 @@ const CustomOpacityButton = ({
     title = "",
     color = "royalblue",
     style = {},
+    ...otherProps
 }) => {
     return (
         <TouchableOpacity
+            {...otherProps}
             style={[styles.fullWidth, styles.buttonContainer, { backgroundColor: color }, style]}
             onPress={() => {
                 //* using vibration
@@ -17,7 +19,9 @@ const CustomOpacityButton = ({
                 onPress();
             }}
             activeOpacity={0.7}>
-            <BoldText style={styles.buttonText} fontSize={1.8}>{title}</BoldText>
+            <BoldText style={styles.buttonText} fontSize={1.8}>
+                {title}
+            </BoldText>
         </TouchableOpacity>
     );
 };

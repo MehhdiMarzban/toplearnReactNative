@@ -21,6 +21,7 @@ const CartItemsList = () => {
                         title={item.title}
                         image={item.image}
                         price={item.price}
+                        offPercent={item.offPercent}
                         handleDeleteOneItemCart={() => handleDeleteOneItemCart(item.id)}
                     />
                 )}

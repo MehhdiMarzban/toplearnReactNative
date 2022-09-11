@@ -12,3 +12,9 @@ export const calculatePercent = (price, offPercent) => {
     const remainPercent = 100 - Number(offPercent);
     return (remainPercent * Number(price)) / 100;
 };
+
+export const calculateSumWithPercent = (cartData) => {
+    return cartData.reduce((sum, current) => {
+        return sum + calculatePercent(current.price, current.offPercent);
+    }, 0);
+};

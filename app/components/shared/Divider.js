@@ -1,5 +1,6 @@
 import { View, StyleSheet } from "react-native";
-const Divider = ({ style ,...otherProps }) => {
+
+const Divider = ({ style, ...otherProps }) => {
     return <View {...otherProps} style={[styles.divider, style]} />;
 };
 

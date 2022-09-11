@@ -6,7 +6,7 @@ import RegularText from "../Texts/RegularText";
 import BoldText from "../Texts/BoldText";
 import COLORS from "../../styles/colors.json";
 
-const Price = ({ price, offPercent = 0 }) => {
+const Price = ({ price = 0, offPercent = 0 }) => {
     return (
         <View style={styles.rightPriceContainer}>
             <MaterialCommunityIcons

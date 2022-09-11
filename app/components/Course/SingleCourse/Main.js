@@ -1,4 +1,4 @@
-import { FlatList } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 
 import BottomDetails from "./BottomDetails";
 import DownloadList from "./DownloadList";
@@ -8,14 +8,19 @@ const Main = ({ data }) => {
     return (
         <>
             <FlatList
-                ListFooterComponentStyle={{ alignItems: "center" }}
+                contentContainerStyle={styles.flatListContainerContent}
                 data={[]}
                 ListHeaderComponent={<HeaderDetails data={data} />}
                 ListFooterComponent={<DownloadList data={data.downloadFile} />}
             />
+            {/* this bottom details have absolute position and doesn't matter where be called */}
             <BottomDetails data={data} />
         </>
     );
 };
+
+const styles = StyleSheet.create({
+    flatListContainerContent: { alignItems: "center", paddingTop: 20, paddingBottom: 110 },
+});
 
 export default Main;

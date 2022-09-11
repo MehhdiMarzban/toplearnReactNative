@@ -25,8 +25,6 @@ const HorizontalCourseList = ({ courses = [], listTitle = "" }) => {
                 data={courses}
                 horizontal
                 keyExtractor={(item) => item.id.toString()}
-                // ListHeaderComponent={<Card />}
-                // ListHeaderComponentStyle={{marginLeft: 20}}
                 contentContainerStyle={{ paddingVertical: 30, paddingHorizontal: 10 }}
                 ItemSeparatorComponent={HorizontalCardSeparator}
                 renderItem={({ item }) => <Card item={item} />}

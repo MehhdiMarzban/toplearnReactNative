@@ -1,18 +1,28 @@
 import { View, StyleSheet } from "react-native";
 import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 
 import AlertLayout from "../Layouts/AlertLayout";
 import CustomPressableButton from "../Buttons/CustomPressableButton";
 import COLORS from "../../styles/colors.json";
 import BoldText from "../Texts/BoldText";
 import Divider from "../shared/Divider";
-import { numberWithCommas, calculateSum } from "../../utils/price";
+import { numberWithCommas, calculateSum, calculateSumWithPercent } from "../../utils/price";
 import { useToplearnContext } from "../../hooks/useToplearnContext";
 import CartItemsList from "./CartItemsList";
 
 const CartAlert = () => {
     const cartData = useSelector((state) => state.cart);
     const { handleDeleteCart, handleDismissCart, showCart } = useToplearnContext();
+
+    const [sumPrice, setSumPrice] = useState(0);
+    const [sumPriceWithOff, setSumPriceWithOff] = useState(0);
+
+    //* update component after change cartDetailState
+    useEffect(() => {
+        setSumPrice(numberWithCommas(calculateSum(cartData)));
+        setSumPriceWithOff(numberWithCommas(calculateSumWithPercent(cartData)));
+    }, [cartData]);
 
     return (
         <AlertLayout
@@ -28,8 +38,11 @@ const CartAlert = () => {
                     {/* TODO add cartList */}
                     <CartItemsList />
                     <Divider style={{ marginVertical: 6, height: 4 }} />
-                    <BoldText fontSize={1.8} style={styles.cartSumPrice}>
-                        جمع کل صورت حساب : {numberWithCommas(calculateSum(cartData))} تومان
+                    <BoldText fontSize={1.6} style={styles.cartSumPrice}>
+                        جمع کل صورت حساب : {sumPrice} تومان
+                    </BoldText>
+                    <BoldText fontSize={1.8} style={styles.cartPayPrice}>
+                        مبلغ قابل پرداخت : {sumPriceWithOff} تومان
                     </BoldText>
 
                     {/* TODO add cartList */}
@@ -58,6 +71,11 @@ const styles = StyleSheet.create({
         color: COLORS.TITLE_COLOR,
     },
     cartSumPrice: {
+        color: COLORS.RED_COLOR,
+        textAlign: "center",
+        textDecorationLine: "line-through",
+    },
+    cartPayPrice: {
         color: COLORS.TITLE_COLOR,
         textAlign: "center",
     },

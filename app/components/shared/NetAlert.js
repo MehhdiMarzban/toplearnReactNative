@@ -9,7 +9,7 @@ import { useNetworkConnection } from "../../hooks/useNetworkConnection";
 const NetAlert = () => {
     const { handleExit } = useToplearnContext();
     const isConnected = useNetworkConnection();
-    
+
     return (
         <>
             <AlertLayout title="توجه" isVisible={!isConnected} showCloseButton={false}>

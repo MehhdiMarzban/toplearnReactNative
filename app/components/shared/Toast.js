@@ -4,14 +4,18 @@ import BoldText from "../Texts/BoldText";
 import RegularText from "../Texts/RegularText";
 import COLORS from "../../styles/colors.json";
 
-const Toast = (props) => {
+const Toast = ({ props, text1, text2 }) => {
     return (
-        <View style={[styles.customToastContaienr, {backgroundColor: props.props.bg ? props.props.bg : COLORS.CYAN_COLOR}]}>
+        <View
+            style={[
+                styles.customToastContaienr,
+                { backgroundColor: props.bg ? props.bg : COLORS.CYAN_COLOR },
+            ]}>
             <BoldText fontSize={2} style={styles.customToastText}>
-                {props?.text1}
+                {text1}
             </BoldText>
             <RegularText fontSize={1.4} style={styles.customToastText}>
-                {props?.text2}
+                {text2}
             </RegularText>
         </View>
     );

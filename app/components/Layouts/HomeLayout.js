@@ -7,7 +7,7 @@ import HeaderText from "../Texts/HeaderText";
 import CartButton from "../cart/CartButton";
 import { useToplearnContext } from "../../hooks/useToplearnContext";
 
-const HomeLayout = ({ children, title = false, HeaderComponent = <></>, style }) => {
+const HomeLayout = ({ children, title = false, HeaderComponent = <></>, style = {} }) => {
     const { handleShowCart } = useToplearnContext();
     
     return (
