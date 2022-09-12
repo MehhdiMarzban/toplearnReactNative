@@ -7,8 +7,13 @@ import globalStyles from "../../../styles/globalStyles";
 import HorizontalCardSeparator from "../../shared/HorizontalCardSeparator";
 import Divider from "../../shared/Divider";
 import BareButton from "../../Buttons/BareButton";
+import { useToplearnNavigation } from "../../../hooks/useTopLearnNavigation";
+import { useToplearnContext } from "../../../hooks/useToplearnContext";
 
 const HorizontalCourseList = ({ courses = [], listTitle = "" }) => {
+    const { handleAddToCart } = useToplearnContext();
+    const { handleCourseClick } = useToplearnNavigation();
+
     return (
         <View style={styles.flatListContainer}>
             <View style={styles.moreContainer}>
@@ -27,7 +32,13 @@ const HorizontalCourseList = ({ courses = [], listTitle = "" }) => {
                 keyExtractor={(item) => item.id.toString()}
                 contentContainerStyle={{ paddingVertical: 30, paddingHorizontal: 10 }}
                 ItemSeparatorComponent={HorizontalCardSeparator}
-                renderItem={({ item }) => <Card item={item} />}
+                renderItem={({ item }) => (
+                    <Card
+                        handleAddToCart={() => handleAddToCart(item)}
+                        handleCourseClick={() => handleCourseClick(item)}
+                        item={item}
+                    />
+                )}
             />
         </View>
     );

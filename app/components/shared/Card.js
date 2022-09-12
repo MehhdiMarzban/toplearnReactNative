@@ -8,8 +8,6 @@ import { numberWithCommas } from "../../utils/price";
 import Badge from "./Badge";
 import Divider from "./Divider";
 import TabBarButton from "../Buttons/TabBarButton";
-import { useToplearnContext } from "../../hooks/useToplearnContext";
-import { useToplearnNavigation } from "../../hooks/useTopLearnNavigation";
 
 const Card = ({
     item = {
@@ -21,17 +19,14 @@ const Card = ({
         imageUrl: require("../../assets/courses/ReactNative.jpg"),
     },
     fullWidth = false,
+    handleAddToCart = () => null,
+    handleCourseClick = () => null,
 }) => {
-    const { handleAddToCart } = useToplearnContext();
-    const { handleCourseClick } = useToplearnNavigation();
-
     return (
         <TouchableOpacity
             style={[styles.container, fullWidth && { width: "100%", height: 420 }]}
             activeOpacity={0.7}
-            onPress={() => {
-                handleCourseClick(item);
-            }}>
+            onPress={handleCourseClick}>
             <Image
                 resizeMode="contain"
                 style={[styles.image, fullWidth && { height: 250 }]}
@@ -86,18 +81,14 @@ const Card = ({
                 </View>
                 <Divider />
                 <View style={styles.buttonContainer}>
-                    <TabBarButton
-                        style={styles.cardButton}
-                        onPress={() => {
-                            handleAddToCart(item);
-                        }}>
+                    <TabBarButton style={styles.cardButton} onPress={handleAddToCart}>
                         <MaterialCommunityIcons
                             color={globalStyles.COLORS.MEDIUM}
                             name="cart-plus"
                             size={30}
                         />
                     </TabBarButton>
-                    <TabBarButton style={styles.cardButton} onPress={() => handleCourseClick(item)}>
+                    <TabBarButton style={styles.cardButton} onPress={handleCourseClick}>
                         <MaterialCommunityIcons
                             color={globalStyles.COLORS.MEDIUM}
                             name="shopping-search"

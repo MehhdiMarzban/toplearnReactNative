@@ -1,9 +1,14 @@
 import { StyleSheet, FlatList } from "react-native";
 
+import { useToplearnContext } from "../../../hooks/useToplearnContext";
+import { useToplearnNavigation } from "../../../hooks/useTopLearnNavigation";
 import Card from "../../shared/Card";
 import VerticalCardSeparator from "../../shared/VerticalCardSeparator";
 
 const VerticalCourseList = ({ data = [] }) => {
+    const { handleAddToCart } = useToplearnContext();
+    const { handleCourseClick } = useToplearnNavigation();
+
     return (
         <FlatList
             data={data}
@@ -11,7 +16,14 @@ const VerticalCourseList = ({ data = [] }) => {
             showsVerticalScrollIndicator={false}
             ItemSeparatorComponent={VerticalCardSeparator}
             contentContainerStyle={styles.container}
-            renderItem={({ item }) => <Card item={item} fullWidth />}
+            renderItem={({ item }) => (
+                <Card
+                    handleAddToCart={() => handleAddToCart(item)}
+                    handleCourseClick={() => handleCourseClick(item)}
+                    item={item}
+                    fullWidth
+                />
+            )}
         />
     );
 };
