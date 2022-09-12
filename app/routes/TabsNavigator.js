@@ -3,7 +3,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 import { ProfileScreen, CoursesScreen, MyCoursesScreen } from "../screens";
 import TabBarButton from "../components/Buttons/TabBarButton";
-import COLORS from "../styles/colors.json";
+import globalStyles from "../styles/globalStyles";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +19,7 @@ const TabsNavigator = () => {
                     alignItems: "center",
                     marginBottom: 5,
                 },
-                tabBarActiveTintColor: COLORS.PRIMARY_COLOR,
+                tabBarActiveTintColor: globalStyles.COLORS.PRIMARY,
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconName;
                     if (route.name === "ProfileScreen") {

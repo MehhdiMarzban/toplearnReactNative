@@ -2,7 +2,7 @@ import { View, StyleSheet, FlatList } from "react-native";
 
 import BoldText from "../../Texts/BoldText";
 import DownloadItem from "./DownloadItem";
-import COLORS from "../../../styles/colors.json";
+import globalStyles from "../../../styles/globalStyles";
 
 const DownloadList = ({ data }) => {
     //* when not exist any file dont show anything
@@ -26,15 +26,15 @@ const DownloadList = ({ data }) => {
 
 const styles = StyleSheet.create({
     downloadContainer: {
-        backgroundColor: COLORS.LIGHT_GREY_COLOR,
-        width: "95%",
+        backgroundColor: globalStyles.COLORS.LIGHT_GREY,
+        width: "100%",
         borderRadius: 10,
         marginBottom: 50,
         paddingVertical: 10,
     },
 
     downloadHeader: {
-        color: COLORS.GREY_COLOR,
+        color: globalStyles.COLORS.MEDIUM,
         textAlign: "center",
         marginBottom: 5,
     },

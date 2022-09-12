@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 
-import COLORS from "../../../styles/colors.json";
+import globalStyles from "../../../styles/globalStyles";
 import Main from "../../../components/Course/SingleCourse/Main";
 
 const SingleCourseScreen = ({ navigation, route }) => {
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "flex-start",
         alignItems: "center",
-        backgroundColor: COLORS.WHITE_COLOR,
+        backgroundColor: globalStyles.COLORS.WHITE,
         width: "100%",
     },
 });

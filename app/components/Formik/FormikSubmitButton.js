@@ -1,14 +1,14 @@
 import { useFormikContext } from "formik";
 
 import CustomOpacityButton from "../Buttons/CustomOpacityButton";
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 
 const FormikSubmitButton = ({ title, ...otherProps }) => {
     const { handleSubmit } = useFormikContext();
     return (
         <CustomOpacityButton
             title={title}
-            color={COLORS.CYAN_COLOR}
+            color={globalStyles.COLORS.CYAN}
             onPress={handleSubmit}
             {...otherProps}
         />

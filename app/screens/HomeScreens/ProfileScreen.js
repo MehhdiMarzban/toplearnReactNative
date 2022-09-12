@@ -8,7 +8,6 @@ import IconButton from "../../components/Buttons/IconButton";
 import RegularText from "../../components/Texts/RegularText";
 import HomeLayout from "../../components/Layouts/HomeLayout";
 import Divider from "../../components/shared/Divider";
-import COLORS from "../../styles/colors.json";
 import globalStyles from "../../styles/globalStyles";
 import { numberWithCommas } from "../../utils/price";
 
@@ -17,7 +16,7 @@ const ProfileScreen = () => {
     const [imageUri, setImageUri] = useState(null);
 
     useEffect(() => {
-        if(profile.profileUri){
+        if (profile.profileUri) {
             setImageUri(profile.profileUri);
         }
     }, []);
@@ -46,7 +45,7 @@ const ProfileScreen = () => {
                             <TouchableOpacity onPress={handlePickImage}>
                                 {imageUri ? (
                                     <Image
-                                        source={{uri: imageUri}}
+                                        source={{ uri: imageUri }}
                                         style={globalStyles.profile}
                                     />
                                 ) : (
@@ -93,7 +92,7 @@ const ProfileScreen = () => {
 const styles = StyleSheet.create({
     header: {
         marginTop: StatusBar.currentHeight,
-        backgroundColor: COLORS.PRIMARY_COLOR,
+        backgroundColor: globalStyles.COLORS.PRIMARY,
         width: "100%",
         justifyContent: "flex-end",
         alignItems: "center",
@@ -112,13 +111,13 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     profileName: {
-        color: COLORS.WHITE_COLOR,
+        color: globalStyles.COLORS.WHITE,
     },
     profileEmail: {
-        color: COLORS.LIGHT_GREY_COLOR,
+        color: globalStyles.COLORS.LIGHT_GREY,
     },
     profileBalance: {
-        color: COLORS.WHITE_COLOR,
+        color: globalStyles.COLORS.WHITE,
     },
 });
 

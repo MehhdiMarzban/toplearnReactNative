@@ -1,13 +1,13 @@
 import { Pressable, View, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 import RegularText from "../Texts/RegularText";
 
 const IconButton = ({
     icon = "account",
     iconSize = 30,
-    iconColor = COLORS.LIGHT_GREY_COLOR,
+    iconColor = globalStyles.COLORS.MEDIUM,
     btnTitle = "",
     style = {},
     ...otherProps
@@ -16,7 +16,7 @@ const IconButton = ({
         <Pressable
             {...otherProps}
             renderToHardwareTextureAndroid
-            android_ripple={{ color: COLORS.LIGHT_GREY_COLOR, foreground: true }}
+            android_ripple={{ color: globalStyles.COLORS.LIGHT_GREY, foreground: true }}
             style={[styles.ripple, style]}>
             <View style={styles.container}>
                 <MaterialCommunityIcons name={icon} size={iconSize} color={iconColor} />
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         width: "100%",
         padding: 15,
-        backgroundColor: COLORS.WHITE_COLOR,
+        backgroundColor: globalStyles.COLORS.WHITE,
         height: 60,
     },
 });

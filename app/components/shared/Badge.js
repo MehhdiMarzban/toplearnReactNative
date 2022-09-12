@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 
 const Badge = ({ children, style, ...otherProps }) => {
     return (
@@ -16,15 +16,15 @@ const styles = StyleSheet.create({
     badgeContainer: {
         paddingVertical: 4,
         paddingHorizontal: 10,
-        backgroundColor: COLORS.RED_COLOR,
+        backgroundColor: globalStyles.COLORS.RED,
         borderRadius: 20,
         justifyContent: "center",
         alignItems: "center",
     },
     badgeText: {
-        color: COLORS.WHITE_COLOR,
+        color: globalStyles.COLORS.WHITE,
         fontSize: 10,
-        fontFamily: "vazir-bold"
+        fontFamily: "vazir-bold",
     },
 });
 export default Badge;

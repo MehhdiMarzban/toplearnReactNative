@@ -11,6 +11,7 @@ const Main = ({ data }) => {
                 contentContainerStyle={styles.flatListContainerContent}
                 data={[]}
                 ListHeaderComponent={<HeaderDetails data={data} />}
+                ListFooterComponentStyle={styles.dowloadComponentStyle}
                 ListFooterComponent={<DownloadList data={data.downloadFile} />}
             />
             {/* this bottom details have absolute position and doesn't matter where be called */}
@@ -21,6 +22,7 @@ const Main = ({ data }) => {
 
 const styles = StyleSheet.create({
     flatListContainerContent: { alignItems: "center", paddingTop: 20, paddingBottom: 110 },
+    dowloadComponentStyle: { width: "95%" },
 });
 
 export default Main;

@@ -1,15 +1,18 @@
 import { SuccessToast, InfoToast } from "react-native-toast-message";
 
 import Toast from "../components/shared/Toast";
-import COLORS from "../styles/colors.json";
+import globalStyles from "../styles/globalStyles";
 
 const toastConfig = {
     success: (props) => {
         return (
             <SuccessToast
                 {...props}
-                text1Style={{ fontFamily: "vazir" }}
-                text2Style={{ fontFamily: "vazir" }}
+                text2Style={{
+                    fontFamily: "vazir",
+                    fontSize: 12,
+                    color: globalStyles.COLORS.GREY,
+                }}
             />
         );
     },
@@ -17,14 +20,14 @@ const toastConfig = {
         return (
             <InfoToast
                 {...props}
-                text2Style={{ fontFamily: "vazir-bold" ,fontSize: 12, color: COLORS.GREY_COLOR}}
-            >
-            </InfoToast>
+                text2Style={{
+                    fontFamily: "vazir-bold",
+                    fontSize: 12,
+                    color: globalStyles.COLORS.GREY,
+                }}></InfoToast>
         );
     },
-    custom: Toast 
+    custom: Toast,
 };
-
-
 
 export default toastConfig;

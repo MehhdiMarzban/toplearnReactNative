@@ -3,7 +3,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 import BoldText from "../../Texts/BoldText";
 import Card from "../../shared/Card";
-import COLORS from "../../../styles/colors.json";
+import globalStyles from "../../../styles/globalStyles";
 import HorizontalCardSeparator from "../../shared/HorizontalCardSeparator";
 import Divider from "../../shared/Divider";
 import BareButton from "../../Buttons/BareButton";
@@ -16,7 +16,7 @@ const HorizontalCourseList = ({ courses = [], listTitle = "" }) => {
                     {listTitle}
                 </BoldText>
                 <BareButton style={styles.bareButton}>
-                    <MaterialIcons name="arrow-back" size={28} color={COLORS.GREY_COLOR} />
+                    <MaterialIcons name="arrow-back" size={28} color={globalStyles.COLORS.GREY} />
                 </BareButton>
             </View>
             <Divider style={styles.headerDivider} />
@@ -39,10 +39,10 @@ const styles = StyleSheet.create({
         heigth: 450,
         width: "100%",
         marginVertical: 10,
-        backgroundColor: COLORS.WHITE_COLOR,
+        backgroundColor: globalStyles.COLORS.WHITE,
     },
     groupTitle: {
-        color: COLORS.GREY_COLOR,
+        color: globalStyles.COLORS.GREY,
         marginVertical: 10,
         marginLeft: 20,
     },

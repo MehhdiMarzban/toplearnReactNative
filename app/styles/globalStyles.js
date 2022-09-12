@@ -1,12 +1,17 @@
-import { StyleSheet, StatusBar } from "react-native";
-import COLORS from "./colors.json";
+import Constants from "expo-constants";
 
-const globalStyles = StyleSheet.create({
+import COLORS from "./colors";
+
+const globalStyles = {
     container: {
-        marginTop: StatusBar.currentHeight,
+        marginTop: Constants.statusBarHeight,
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+    },
+    screen: {
+        marginTop: Constants.statusBarHeight,
+        flex: 1,
     },
     center: {
         justifyContent: "center",
@@ -17,32 +22,33 @@ const globalStyles = StyleSheet.create({
     },
     headerText: {
         fontFamily: "vazir-bold",
-        color: COLORS.WHITE_COLOR,
-        fontSize: 20
+        color: COLORS.WHITE,
     },
     boldText: {
         fontFamily: "vazir-bold",
     },
     linkText: {
         fontFamily: "vazir-bold",
-        color: COLORS.PRIMARY_COLOR,
+        color: COLORS.PRIMARY,
     },
     shadow: {
-        
         elevation: 8,
     },
     logo: {
         width: 75,
-        height: 55
+        height: 55,
     },
     profile: {
         width: 75,
         height: 75,
-        borderRadius: 50
+        borderRadius: 50,
     },
     marginVertical: {
-        marginVertical: 10
-    }
-});
+        marginVertical: 10,
+    },
+    COLORS,
+};
+
+// globalStyles.COLORS = COLORS;
 
 export default globalStyles;

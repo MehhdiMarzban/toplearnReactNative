@@ -3,7 +3,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import BoldText from "../Texts/BoldText";
 import Divider from "../shared/Divider";
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 import TabBarButton from "../Buttons/TabBarButton";
 
 const AlertLayout = ({
@@ -34,7 +34,7 @@ const AlertLayout = ({
                                     <MaterialCommunityIcons
                                         name="close"
                                         size={30}
-                                        color={COLORS.LIGHT_BACKGROUND_COLOR}
+                                        color={globalStyles.COLORS.LIGHT}
                                     />
                                 </TabBarButton>
                             )}
@@ -50,14 +50,14 @@ const AlertLayout = ({
 
 const styles = StyleSheet.create({
     modal: {
-        backgroundColor: COLORS.MODAL_BACKGROUND,
+        backgroundColor: globalStyles.COLORS.MODAL_BACKGROUND,
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
     },
     container: {
         width: "90%",
-        backgroundColor: COLORS.WHITE_COLOR,
+        backgroundColor: globalStyles.COLORS.WHITE,
         borderRadius: 10,
         padding: 10,
     },

@@ -1,7 +1,7 @@
 import { View, StyleSheet, Image, TouchableWithoutFeedback } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 import RegularText from "../Texts/RegularText";
 import TabBarButton from "../Buttons/TabBarButton";
 import { numberWithCommas } from "../../utils/price";
@@ -25,7 +25,11 @@ const CartItem = ({
                         {numberWithCommas(price)}
                     </RegularText>
                     <TabBarButton onPress={handleDeleteOneItemCart}>
-                        <MaterialCommunityIcons name="delete" size={24} color={COLORS.GREY_COLOR} />
+                        <MaterialCommunityIcons
+                            name="delete"
+                            size={24}
+                            color={globalStyles.COLORS.GREY}
+                        />
                     </TabBarButton>
                 </View>
             </View>
@@ -38,7 +42,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        backgroundColor: COLORS.VERY_LIGHT_COLOR,
+        backgroundColor: globalStyles.COLORS.LIGHT,
         padding: 5,
         borderRadius: 6,
     },
@@ -52,7 +56,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     priceText: {
-        color: COLORS.TITLE_COLOR,
+        color: globalStyles.COLORS.TITLE,
     },
 });
 

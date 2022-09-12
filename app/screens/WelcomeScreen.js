@@ -5,7 +5,7 @@ import * as Notification from "expo-notifications";
 
 import CustomOpacityButton from "../components/Buttons/CustomOpacityButton";
 import BoldText from "../components/Texts/BoldText";
-import COLORS from "../styles/colors.json";
+import globalStyles from "../styles/globalStyles";
 import useDoubleClickExit from "../hooks/useDoubleClickExit";
 
 Notification.setNotificationHandler({
@@ -48,7 +48,7 @@ export default function WelcomeScreen({ navigation }) {
                         notificationHandler();
                     }}
                     width={"100%"}
-                    color={COLORS.MAGENTA_PURPLE}
+                    color={globalStyles.COLORS.MAGENTA_PURPLE}
                 />
             </View>
         </ImageBackground>

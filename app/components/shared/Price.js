@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { calculatePercent, numberWithCommas } from "../../utils/price";
 import RegularText from "../Texts/RegularText";
 import BoldText from "../Texts/BoldText";
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 
 const Price = ({ price = 0, offPercent = 0 }) => {
     return (
@@ -12,7 +12,7 @@ const Price = ({ price = 0, offPercent = 0 }) => {
             <MaterialCommunityIcons
                 name="cash-register"
                 size={25}
-                color={COLORS.LIGHT_GREY_COLOR}
+                color={globalStyles.COLORS.LIGHT_GREY}
             />
             {price == 0 ? (
                 <BoldText style={styles.teacherText} fontSize={1.6}>
@@ -40,14 +40,14 @@ const Price = ({ price = 0, offPercent = 0 }) => {
 };
 const styles = StyleSheet.create({
     offPrice: {
-        color: COLORS.GREY_COLOR,
+        color: globalStyles.COLORS.GREY,
         marginLeft: 4,
     },
     realPrice: {
         textDecorationLine: "line-through",
-        textDecorationColor: COLORS.RED_COLOR,
+        textDecorationColor: globalStyles.COLORS.RED,
         textDecorationStyle: "solid",
-        color: COLORS.GREY_COLOR,
+        color: globalStyles.COLORS.GREY,
     },
     rightPriceContainer: {
         flexDirection: "row",

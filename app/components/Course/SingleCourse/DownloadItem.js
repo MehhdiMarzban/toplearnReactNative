@@ -3,7 +3,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import BoldText from "../../Texts/BoldText";
 import RegularText from "../../Texts/RegularText";
-import COLORS from "../../../styles/colors.json";
+import globalStyles from "../../../styles/globalStyles";
 
 const DownloadItem = ({ data: { item } }) => {
     return (
@@ -19,7 +19,7 @@ const DownloadItem = ({ data: { item } }) => {
                 </View>
                 <MaterialCommunityIcons
                     name={item.own ? "download" : "download-lock"}
-                    color={COLORS.WHITE_COLOR}
+                    color={globalStyles.COLORS.WHITE}
                     size={30}
                 />
             </View>
@@ -36,11 +36,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderWidth: 1,
         borderStyle: "dashed",
-        borderColor: COLORS.WHITE_COLOR,
+        borderColor: globalStyles.COLORS.WHITE,
         borderRadius: 10,
         marginHorizontal: 10,
         marginBottom: 5,
-        backgroundColor: COLORS.CYAN_COLOR,
+        backgroundColor: globalStyles.COLORS.CYAN,
     },
     touchable: {
         width: "100%"
@@ -49,14 +49,14 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     downloadNumber: {
-        color: COLORS.WHITE_COLOR,
+        color: globalStyles.COLORS.WHITE,
         marginRight: 10,
-        backgroundColor: COLORS.PRIMARY_COLOR,
+        backgroundColor: globalStyles.COLORS.PRIMARY,
         paddingHorizontal: 10,
         borderRadius: 10,
     },
     downloadTitle: {
-        color: COLORS.WHITE_COLOR,
+        color: globalStyles.COLORS.WHITE,
     },
 });
 

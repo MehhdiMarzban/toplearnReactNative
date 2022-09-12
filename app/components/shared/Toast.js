@@ -2,14 +2,14 @@ import { View, StyleSheet } from "react-native";
 
 import BoldText from "../Texts/BoldText";
 import RegularText from "../Texts/RegularText";
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 
 const Toast = ({ props, text1, text2 }) => {
     return (
         <View
             style={[
                 styles.customToastContaienr,
-                { backgroundColor: props.bg ? props.bg : COLORS.CYAN_COLOR },
+                { backgroundColor: props.bg ? props.bg : globalStyles.COLORS.CYAN },
             ]}>
             <BoldText fontSize={2} style={styles.customToastText}>
                 {text1}
@@ -23,7 +23,7 @@ const Toast = ({ props, text1, text2 }) => {
 
 const styles = StyleSheet.create({
     customToastText: {
-        color: COLORS.WHITE_COLOR,
+        color: globalStyles.COLORS.WHITE,
         textAlign: "center",
         width: "100%",
     },

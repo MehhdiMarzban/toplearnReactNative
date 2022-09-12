@@ -5,7 +5,7 @@ import CustomPressableButton from "../../Buttons/CustomPressableButton";
 import Badge from "../../shared/Badge";
 import RegularText from "../../Texts/RegularText";
 import Price from "../../shared/Price";
-import COLORS from "../../../styles/colors.json";
+import globalStyles from "../../../styles/globalStyles";
 import { useToplearnContext } from "../../../hooks/useToplearnContext";
 
 const BottomDetails = ({ data }) => {
@@ -19,14 +19,16 @@ const BottomDetails = ({ data }) => {
                         <MaterialCommunityIcons
                             name="account-star"
                             size={25}
-                            color={COLORS.LIGHT_GREY_COLOR}
+                            color={globalStyles.COLORS.LIGHT_GREY}
                         />
                         <RegularText style={styles.teacherText} fontSize={1.6}>
                             {data.teacher}
                         </RegularText>
                     </View>
                     <View style={styles.courseTime}>
-                        <RegularText fontSize={1.6}>{data.time}</RegularText>
+                        <RegularText style={styles.courseTimeText} fontSize={1.6}>
+                            {data.time}
+                        </RegularText>
                     </View>
                 </View>
                 <View style={styles.priceContainer}>
@@ -37,7 +39,7 @@ const BottomDetails = ({ data }) => {
                             <MaterialCommunityIcons
                                 name="brightness-percent"
                                 size={10}
-                                color={COLORS.WHITE_COLOR}
+                                color={globalStyles.COLORS.WHITE}
                             />
                         </Badge>
                     )}
@@ -58,12 +60,12 @@ const styles = StyleSheet.create({
         bottom: 0,
         height: 110,
         width: "100%",
-        backgroundColor: COLORS.WHITE_COLOR,
+        backgroundColor: globalStyles.COLORS.WHITE,
         justifyContent: "space-between",
         paddingTop: 6,
         elevation: 10,
         borderTopWidth: 1,
-        borderTopColor: COLORS.VERY_LIGHT_COLOR,
+        borderTopColor: globalStyles.COLORS.LIGHT,
     },
     bottomContainerTop: {
         paddingHorizontal: 10,
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
         borderRadius: 0,
     },
     teacherText: {
-        color: COLORS.GREY_COLOR,
+        color: globalStyles.COLORS.GREY,
         marginLeft: 4,
     },
     teacherContainer: {
@@ -95,6 +97,9 @@ const styles = StyleSheet.create({
     courseTime: {
         alignItems: "center",
         justifyContent: "center",
+    },
+    courseTimeText: {
+        color: globalStyles.COLORS.GREY,
     },
 });
 

@@ -2,14 +2,14 @@ import { StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import constants from "expo-constants";
 
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 import HeaderText from "../Texts/HeaderText";
 import CartButton from "../cart/CartButton";
 import { useToplearnContext } from "../../hooks/useToplearnContext";
 
 const HomeLayout = ({ children, title = false, HeaderComponent = <></>, style = {} }) => {
     const { handleShowCart } = useToplearnContext();
-    
+
     return (
         <>
             <View style={[styles.container, style]}>
@@ -23,7 +23,7 @@ const HomeLayout = ({ children, title = false, HeaderComponent = <></>, style = 
                 ) : null}
                 <View style={styles.main}>{children}</View>
             </View>
-            <StatusBar style="light" backgroundColor={COLORS.PRIMARY_COLOR} />
+            <StatusBar style="light" backgroundColor={globalStyles.COLORS.PRIMARY} />
         </>
     );
 };
@@ -31,7 +31,7 @@ const HomeLayout = ({ children, title = false, HeaderComponent = <></>, style = 
 const styles = StyleSheet.create({
     header: {
         marginTop: constants.statusBarHeight,
-        backgroundColor: COLORS.PRIMARY_COLOR,
+        backgroundColor: globalStyles.COLORS.PRIMARY,
         width: "100%",
         justifyContent: "flex-end",
         alignItems: "center",

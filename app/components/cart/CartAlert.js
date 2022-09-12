@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import AlertLayout from "../Layouts/AlertLayout";
 import CustomPressableButton from "../Buttons/CustomPressableButton";
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 import BoldText from "../Texts/BoldText";
 import Divider from "../shared/Divider";
 import { numberWithCommas, calculateSum, calculateSumWithPercent } from "../../utils/price";
@@ -35,7 +35,6 @@ const CartAlert = () => {
                 </BoldText>
             ) : (
                 <View>
-                    {/* TODO add cartList */}
                     <CartItemsList />
                     <Divider style={{ marginVertical: 6, height: 4 }} />
                     <BoldText fontSize={1.6} style={styles.cartSumPrice}>
@@ -45,11 +44,10 @@ const CartAlert = () => {
                         مبلغ قابل پرداخت : {sumPriceWithOff} تومان
                     </BoldText>
 
-                    {/* TODO add cartList */}
                     <CustomPressableButton pressableStyle={styles.buttonMargin} title="پرداخت" />
                     <CustomPressableButton
                         pressableStyle={styles.buttonMargin}
-                        color={COLORS.RED_COLOR}
+                        color={globalStyles.COLORS.RED}
                         onPress={() => {
                             handleDeleteCart();
                             handleDismissCart();
@@ -68,15 +66,15 @@ const styles = StyleSheet.create({
     },
     headerText: {
         textAlign: "center",
-        color: COLORS.TITLE_COLOR,
+        color: globalStyles.COLORS.TITLE,
     },
     cartSumPrice: {
-        color: COLORS.RED_COLOR,
+        color: globalStyles.COLORS.RED,
         textAlign: "center",
         textDecorationLine: "line-through",
     },
     cartPayPrice: {
-        color: COLORS.TITLE_COLOR,
+        color: globalStyles.COLORS.TITLE,
         textAlign: "center",
     },
 });

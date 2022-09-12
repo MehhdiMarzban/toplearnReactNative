@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useSelector } from "react-redux";
 
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 import TabBarButton from "../Buttons/TabBarButton";
 import Badge from "../shared/Badge";
 
@@ -11,7 +11,7 @@ const CartButton = ({ handleOnPress = () => null }) => {
 
     return (
         <TabBarButton style={styles.basketButton} onPress={handleOnPress}>
-            <MaterialCommunityIcons name="cart" size={30} color={COLORS.WHITE_COLOR} />
+            <MaterialCommunityIcons name="cart" size={30} color={globalStyles.COLORS.WHITE} />
             <Badge style={styles.basketBadge}>{cartData.length}</Badge>
         </TabBarButton>
     );
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: 0,
         right: 5,
-        padding: 10,
+        padding: 5,
     },
     basketBadge: {
         position: "absolute",

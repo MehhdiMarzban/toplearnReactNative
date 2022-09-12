@@ -1,11 +1,11 @@
 import { Pressable, StyleSheet } from "react-native";
 
 import BoldText from "../Texts/BoldText";
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 
 const CustomPressableButton = ({
     title = "",
-    color = COLORS.CYAN_COLOR,
+    color = globalStyles.COLORS.CYAN,
     textButtonStyle = {},
     pressableStyle = {},
     ...otherProps
@@ -15,7 +15,7 @@ const CustomPressableButton = ({
             <Pressable
                 {...otherProps}
                 style={[styles.pressable, pressableStyle, { backgroundColor: color }]}
-                android_ripple={{ foreground: true, color: COLORS.RIPPLE_COLOR }}>
+                android_ripple={{ foreground: true, color: globalStyles.COLORS.LIGHT }}>
                 <BoldText style={[styles.pressableText, textButtonStyle]} fontSize={1.7}>
                     {title}
                 </BoldText>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
     },
     pressableText: {
-        color: COLORS.WHITE_COLOR,
+        color: globalStyles.COLORS.WHITE,
         textAlign: "center",
     },
 });

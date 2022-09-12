@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { LoginScreen, RegisterScreen, SingleCourseScreen, WelcomeScreen } from "../screens";
 import TabsNavigator from "./TabsNavigator";
-import COLORS from "../styles/colors.json";
+import globalStyles from "../styles/globalStyles";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,11 +12,14 @@ const StacksNavigator = () => {
             screenOptions={{
                 headerShown: false,
                 headerTitleAlign: "center",
-                animationTypeForReplace:"push",
+                animationTypeForReplace: "push",
                 animation: "default",
-                headerStyle: { backgroundColor: COLORS.PRIMARY_COLOR },
-                headerTitleStyle: { color: COLORS.WHITE_COLOR, fontFamily: "vazir-bold" },
-                headerTintColor: COLORS.WHITE_COLOR
+                headerStyle: { backgroundColor: globalStyles.COLORS.PRIMARY },
+                headerTitleStyle: {
+                    color: globalStyles.COLORS.WHITE,
+                    fontFamily: "vazir-bold",
+                },
+                headerTintColor: globalStyles.COLORS.WHITE,
             }}>
             <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
             <Stack.Screen name="LoginScreen" component={LoginScreen} />

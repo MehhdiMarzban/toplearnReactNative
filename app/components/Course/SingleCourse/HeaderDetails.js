@@ -2,7 +2,7 @@ import { Image, View, StyleSheet, Dimensions } from "react-native";
 
 import BoldText from "../../Texts/BoldText";
 import RegularText from "../../Texts/RegularText";
-import COLORS from "../../../styles/colors.json";
+import globalStyles from "../../../styles/globalStyles";
 
 const HeaderDetails = ({ data }) => {
     return (
@@ -11,7 +11,7 @@ const HeaderDetails = ({ data }) => {
             <BoldText fontSize={2.2} style={styles.title}>
                 {data.title}
             </BoldText>
-            <RegularText style={styles.text} fontSize={1.8} >
+            <RegularText style={styles.text} fontSize={1.8}>
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
                 گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
                 برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "center",
         paddingVertical: 10,
-        backgroundColor: COLORS.WHITE_COLOR,
+        backgroundColor: globalStyles.COLORS.WHITE,
         width: "100%",
     },
     image: {
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         textAlign: "justify",
         padding: 20,
         paddingBottom: 50,
-        color: COLORS.BODY_COLOR,
+        color: globalStyles.COLORS.BODY,
         lineHeight: 25,
     },
     button: {
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     title: {
         marginTop: 20,
         marginBottom: 10,
-        color: COLORS.TITLE_COLOR,
+        color: globalStyles.COLORS.TITLE,
     },
     scrollViewContainer: {
         justifyContent: "center",

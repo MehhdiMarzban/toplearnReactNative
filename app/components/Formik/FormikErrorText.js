@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 import RegularText from "../Texts/RegularText";
-import COLORS from "../../styles/colors.json";
+import globalStyles from "../../styles/globalStyles";
 
 const ErrorText = ({ children, touched }) => {
     return (
@@ -13,7 +13,7 @@ const ErrorText = ({ children, touched }) => {
 
 const styles = StyleSheet.create({
     errorText: {
-        color: COLORS.RED_COLOR,
+        color: globalStyles.COLORS.RED,
     },
 });
 
