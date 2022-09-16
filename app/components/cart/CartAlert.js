@@ -6,7 +6,7 @@ import AlertLayout from "../Layouts/AlertLayout";
 import CustomPressableButton from "../Buttons/CustomPressableButton";
 import globalStyles from "../../styles/globalStyles";
 import BoldText from "../Texts/BoldText";
-import Divider from "../shared/Divider";
+import Divider from "../Shared/Divider";
 import { numberWithCommas, calculateSum, calculateSumWithPercent } from "../../utils/price";
 import { useToplearnContext } from "../../hooks/useToplearnContext";
 import CartItemsList from "./CartItemsList";

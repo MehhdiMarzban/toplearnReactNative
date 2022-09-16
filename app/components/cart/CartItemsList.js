@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, View } from "react-native";
 import { useSelector } from "react-redux";
 
-import Divider from "../shared/Divider";
+import Divider from "../Shared/Divider";
 import CartItem from "./CartItem";
 import { useToplearnContext } from "../../hooks/useToplearnContext";
 

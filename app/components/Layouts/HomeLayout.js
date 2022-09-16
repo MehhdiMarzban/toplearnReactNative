@@ -4,7 +4,7 @@ import constants from "expo-constants";
 
 import globalStyles from "../../styles/globalStyles";
 import HeaderText from "../Texts/HeaderText";
-import CartButton from "../cart/CartButton";
+import CartButton from "../Cart/CartButton";
 import { useToplearnContext } from "../../hooks/useToplearnContext";
 
 const HomeLayout = ({ children, title = false, HeaderComponent = <></>, style = {} }) => {
@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        marginBottom: 60,
+        height: "100%",
+        paddingBottom: 70,
     },
 });
 

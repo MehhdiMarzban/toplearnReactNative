@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import globalStyles from "../../styles/globalStyles";
 import TabBarButton from "../Buttons/TabBarButton";
-import Badge from "../shared/Badge";
+import Badge from "../Shared/Badge";
 
 const CartButton = ({ handleOnPress = () => null }) => {
     const cartData = useSelector((state) => state.cart);

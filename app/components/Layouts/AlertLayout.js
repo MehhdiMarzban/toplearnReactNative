@@ -2,7 +2,7 @@ import { Modal, StyleSheet, TouchableWithoutFeedback, View } from "react-native"
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import BoldText from "../Texts/BoldText";
-import Divider from "../shared/Divider";
+import Divider from "../Shared/Divider";
 import globalStyles from "../../styles/globalStyles";
 import TabBarButton from "../Buttons/TabBarButton";
 

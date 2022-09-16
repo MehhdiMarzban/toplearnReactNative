@@ -5,9 +5,9 @@ import { Provider } from "react-redux";
 
 import { store } from "../../redux/store";
 import toastConfig from "../../utils/toastConfig";
-import NetAlert from "../shared/NetAlert";
+import NetAlert from "../Shared/NetAlert";
 import { ToplearnProvider } from "../../context";
-import CartAlert from "../cart/CartAlert";
+import CartAlert from "../Cart/CartAlert";
 
 //* add support rtl
 I18nManager.forceRTL(true);

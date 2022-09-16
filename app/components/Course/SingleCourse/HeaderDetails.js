@@ -1,13 +1,21 @@
-import { Image, View, StyleSheet, Dimensions } from "react-native";
+import { Image, View, StyleSheet } from "react-native";
 
 import BoldText from "../../Texts/BoldText";
 import RegularText from "../../Texts/RegularText";
 import globalStyles from "../../../styles/globalStyles";
+import { useRelativeSize } from "../../../hooks/useRelativeSize";
 
 const HeaderDetails = ({ data }) => {
+    //* using this sizes for image of single course
+    const [width, height] = useRelativeSize();
+
     return (
         <View style={styles.scrollViewContainer}>
-            <Image resizeMode="contain" style={styles.image} source={data.image} />
+            <Image
+                resizeMode="cover"
+                style={[styles.image, { width, height }]}
+                source={data.image}
+            />
             <BoldText fontSize={2.2} style={styles.title}>
                 {data.title}
             </BoldText>
@@ -52,8 +60,6 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     image: {
-        width: Dimensions.get("window").width - 50,
-        height: 200,
         borderRadius: 10,
     },
     text: {

@@ -1,6 +1,6 @@
 import { SuccessToast, InfoToast } from "react-native-toast-message";
 
-import Toast from "../components/shared/Toast";
+import Toast from "../components/Shared/Toast";
 import globalStyles from "../styles/globalStyles";
 
 const toastConfig = {

@@ -3,22 +3,36 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 import globalStyles from "../../../styles/globalStyles";
 import BareButton from "../../Buttons/BareButton";
-import Divider from "../../shared/Divider";
+import Divider from "../../Shared/Divider";
 import BoldText from "../../Texts/BoldText";
 
-const CourseListContainer = ({ children, title = "", onExpandPress = () => {}, ...otherProps }) => {
+const CourseListContainer = ({
+    children,
+    title = "",
+    disableExpand = false,
+    onExpandPress = () => {},
+    containerStyle = {},
+    childrenContainerStyle = {},
+    ...otherProps
+}) => {
     return (
-        <View style={styles.container} {...otherProps}>
+        <View style={[styles.container, containerStyle]} {...otherProps}>
             <View style={styles.moreContainer}>
                 <BoldText style={styles.groupTitle} fontSize={2.2}>
                     {title}
                 </BoldText>
-                <BareButton style={styles.bareButton} onPress={onExpandPress}>
-                    <MaterialIcons name="arrow-back" size={28} color={globalStyles.COLORS.GREY} />
-                </BareButton>
+                {!disableExpand && (
+                    <BareButton style={styles.bareButton} onPress={onExpandPress}>
+                        <MaterialIcons
+                            name="arrow-back"
+                            size={28}
+                            color={globalStyles.COLORS.GREY}
+                        />
+                    </BareButton>
+                )}
             </View>
             <Divider style={styles.headerDivider} />
-            {children}
+            <View style={childrenContainerStyle}>{children}</View>
         </View>
     );
 };
