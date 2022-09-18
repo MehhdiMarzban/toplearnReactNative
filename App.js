@@ -1,10 +1,10 @@
 import AppInitializer from "./app/components/AppInitializer/AppInitializer";
-import { ToplearnNavigation } from "./app/routes";
+import { AppNavigator } from "./app/routes";
 
 export default function App() {
     return (
         <AppInitializer>
-            <ToplearnNavigation />
+            <AppNavigator />
         </AppInitializer>
     );
 }

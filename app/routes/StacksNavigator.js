@@ -25,7 +25,15 @@ const StacksNavigator = () => {
             <Stack.Screen name="LoginScreen" component={LoginScreen} />
             <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
             <Stack.Screen name="HomeScreen" component={TabsNavigator} />
-            <Stack.Screen name="SingleCourseScreen" component={SingleCourseScreen} />
+            <Stack.Screen
+                name="SingleCourseScreen"
+                //* this option can be use here but i used them in SingleCourseScreen
+                // options={({ navigation, route }) => ({
+                //     headerShow: true,
+                //     title: route.params.title,
+                // })}
+                component={SingleCourseScreen}
+            />
         </Stack.Navigator>
     );
 };

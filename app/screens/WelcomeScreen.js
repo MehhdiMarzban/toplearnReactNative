@@ -11,8 +11,9 @@ import useDoubleClickExit from "../hooks/useDoubleClickExit";
 Notification.setNotificationHandler({
     handleNotification: async () => ({
         shouldShowAlert: true,
-        shouldPlaySound: false,
-        shouldSetBadge: false,
+        shouldPlaySound: true,
+        shouldSetBadge: true,
+        priority: 1,
     }),
 });
 
@@ -63,6 +64,9 @@ const notificationHandler = async () => {
             data: { data: "https://mehdi-marzban.ir" },
             vibrate: true,
             badge: 2,
+            sticky: false,
+            color: globalStyles.COLORS.PRIMARY,
+            launchImageName: require("../assets/logo.png")
         },
         trigger: { seconds: 2 },
     });
