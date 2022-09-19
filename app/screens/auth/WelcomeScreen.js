@@ -3,10 +3,11 @@ import { StatusBar } from "expo-status-bar";
 import constants from "expo-constants";
 import * as Notification from "expo-notifications";
 
-import CustomOpacityButton from "../components/Buttons/CustomOpacityButton";
-import BoldText from "../components/Texts/BoldText";
-import globalStyles from "../styles/globalStyles";
-import useDoubleClickExit from "../hooks/useDoubleClickExit";
+import CustomOpacityButton from "../../components/Buttons/CustomOpacityButton";
+import BoldText from "../../components/Texts/BoldText";
+import globalStyles from "../../styles/globalStyles";
+import useDoubleClickExit from "../../hooks/useDoubleClickExit";
+import routes from "../../routes/configs/routes";
 
 Notification.setNotificationHandler({
     handleNotification: async () => ({
@@ -24,12 +25,12 @@ export default function WelcomeScreen({ navigation }) {
     return (
         <ImageBackground
             blurRadius={3}
-            source={require("../assets/bg1.jpg")}
+            source={require("../../assets/bg1.jpg")}
             style={styles.imageBackground}>
             <StatusBar translucent backgroundColor="transparent" />
 
             <View style={styles.topContainer}>
-                <Image source={require("../assets/logo.png")} style={styles.logoImage} />
+                <Image source={require("../../assets/logo.png")} style={styles.logoImage} />
                 <BoldText style={styles.textHeader} fontSize={2}>
                     خودآموزی ، کسب تجربه ، ورود به بازار کار با تاپ لرن
                 </BoldText>
@@ -38,14 +39,14 @@ export default function WelcomeScreen({ navigation }) {
                 <CustomOpacityButton
                     title="ورود"
                     onPress={() => {
-                        navigation.navigate("LoginScreen");
+                        navigation.navigate(routes.AUTH.LOGIN_SCREEN);
                     }}
                     width={"100%"}
                 />
                 <CustomOpacityButton
                     title="ثبت نام"
                     onPress={() => {
-                        navigation.navigate("RegisterScreen");
+                        navigation.navigate(routes.AUTH.REGISTER_SCREEN);
                         notificationHandler();
                     }}
                     width={"100%"}
@@ -66,7 +67,7 @@ const notificationHandler = async () => {
             badge: 2,
             sticky: false,
             color: globalStyles.COLORS.PRIMARY,
-            launchImageName: require("../assets/logo.png")
+            launchImageName: require("../../assets/logo.png"),
         },
         trigger: { seconds: 2 },
     });

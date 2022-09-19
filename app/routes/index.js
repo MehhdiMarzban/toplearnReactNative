@@ -1,3 +1,3 @@
-export { default as AppNavigator } from "./AppNavigator";
-export { default as StacksNavigator } from "./StacksNavigator";
-export { default as TabsNavigator } from "./TabsNavigator";
+export { default as AppNavigator } from "./AppNavigation";
+export { default as HomeNavigator } from "./home/HomeNavigator";
+export { default as AuthNavigator } from "./auth/AuthNavigator";

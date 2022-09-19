@@ -1,6 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import constants from "expo-constants";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 import globalStyles from "../../styles/globalStyles";
 import HeaderText from "../Texts/HeaderText";
@@ -9,10 +10,11 @@ import { useToplearnContext } from "../../hooks/useToplearnContext";
 
 const HomeLayout = ({ children, title = false, HeaderComponent = <></>, style = {} }) => {
     const { handleShowCart } = useToplearnContext();
+    const bottomTabHeight = useBottomTabBarHeight();
 
     return (
         <>
-            <View style={[styles.container, style]}>
+            <View style={[styles.container, style, { marginBottom : bottomTabHeight}]}>
                 {title ? (
                     <View style={styles.header}>
                         {/* cart button */}
@@ -45,7 +47,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         height: "100%",
-        paddingBottom: 70,
     },
 });
 

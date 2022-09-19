@@ -6,6 +6,7 @@ import Main from "../../../components/Course/SingleCourse/Main";
 
 const SingleCourseScreen = ({ navigation, route }) => {
     const data = route.params;
+
     useEffect(() => {
         navigation.setOptions({ headerShown: true, title: data.title });
     }, []);

@@ -2,10 +2,11 @@ import { Formik } from "formik";
 import { View, StyleSheet, Keyboard } from "react-native";
 import Toast from "react-native-toast-message";
 
-import BareButton from "../components/Buttons/BareButton";
-import WideLayout from "../components/Layouts/WideLayout";
-import { loginSchema } from "../validations/formValidations";
-import { FormikTextField, FormikSubmitButton } from "../components/Formik";
+import BareButton from "../../components/Buttons/BareButton";
+import WideLayout from "../../components/Layouts/WideLayout";
+import { loginSchema } from "../../validations/formValidations";
+import { FormikTextField, FormikSubmitButton } from "../../components/Formik";
+import routes from "../../routes/configs/routes";
 
 const LoginScreen = ({ navigation }) => {
     return (
@@ -27,9 +28,8 @@ const LoginScreen = ({ navigation }) => {
                         Keyboard.dismiss();
                         navigation.reset({
                             index: 0,
-                            routes: [{name: "HomeScreen"}],
-                        })
-                        // navigation.navigate("HomeScreen");
+                            routes: [{ name: routes.APP.HOME_NAVIGATOR }],
+                        });
                     }}>
                     <>
                         <View style={styles.formContainer}>
@@ -51,7 +51,10 @@ const LoginScreen = ({ navigation }) => {
                         </View>
                         <View style={styles.buttonContainer}>
                             <FormikSubmitButton title="ورود" />
-                            <BareButton onPress={() => navigation.goBack()} fontSize={1.8} style={styles.margin}>
+                            <BareButton
+                                onPress={() => navigation.goBack()}
+                                fontSize={1.8}
+                                style={styles.margin}>
                                 فراموشی رمز عبور
                             </BareButton>
                         </View>
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     margin: {
-        marginVertical:8
-    }
+        marginVertical: 8,
+    },
 });
 export default LoginScreen;
