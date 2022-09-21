@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet } from "react-native";
 
-import Card from "../../Shared/Card";
-import HorizontalCardSeparator from "../../Shared/HorizontalCardSeparator";
+import Card from "../../shared/Card";
+import HorizontalCardSeparator from "../../shared/HorizontalCardSeparator";
 import { useToplearnNavigation } from "../../../hooks/useTopLearnNavigation";
 import { useToplearnContext } from "../../../hooks/useToplearnContext";
 

@@ -14,7 +14,7 @@ const HomeLayout = ({ children, title = false, HeaderComponent = <></>, style = 
 
     return (
         <>
-            <View style={[styles.container, style, { marginBottom : bottomTabHeight}]}>
+            <View style={[styles.container, style, { marginBottom : bottomTabHeight * 1.5}]}>
                 {title ? (
                     <View style={styles.header}>
                         {/* cart button */}

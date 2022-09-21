@@ -4,7 +4,7 @@ import CourseListContainer from "../../../components/Course/CourseListContainer/
 
 import HorizontalCourseList from "../../../components/Course/CourseLists/HorizontalCourseList";
 import HomeLayout from "../../../components/Layouts/HomeLayout";
-import ImageCarousel from "../../../components/Shared/ImageCarousel";
+import ImageCarousel from "../../../components/shared/ImageCarousel";
 import { useRelativeSize } from "../../../hooks/useRelativeSize";
 
 const CoursesScreen = ({ navigation }) => {

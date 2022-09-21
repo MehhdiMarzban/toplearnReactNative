@@ -1,40 +1,46 @@
 {
-  "expo": {
-    "name": "toplearn",
-    "slug": "toplearn",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./app/assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./app/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./app/assets/icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.murirti.toplearn",
-      "permissions": ["android.permissions.RECORD_AUDIO"]
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "3696265c-f8bf-43ad-8678-b667620d4ae2"
-      }
+    "expo": {
+        "name": "toplearn",
+        "slug": "toplearn",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./app/assets/icon.png",
+        "userInterfaceStyle": "light",
+        "splash": {
+            "image": "./app/assets/splash.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#ffffff"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": ["**/*"],
+        "ios": {
+            "supportsTablet": true
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./app/assets/icon.png",
+                "backgroundColor": "#FFFFFF"
+            },
+            "package": "com.murirti.toplearn",
+            "permissions": ["android.permissions.RECORD_AUDIO"]
+        },
+        "web": {
+            "favicon": "./assets/favicon.png"
+        },
+        "extra": {
+            "eas": {
+                "projectId": "3696265c-f8bf-43ad-8678-b667620d4ae2"
+            }
+        },
+        "plugins": [
+            [
+                "expo-notifications",
+                {
+                    "icon": "./app/assets/logo.png"
+                }
+            ]
+        ]
     }
-  }
 }

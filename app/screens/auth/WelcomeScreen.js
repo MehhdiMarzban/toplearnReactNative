@@ -1,26 +1,20 @@
 import { StyleSheet, View, ImageBackground, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import constants from "expo-constants";
-import * as Notification from "expo-notifications";
 
+import useDoubleClickExit from "../../hooks/useDoubleClickExit";
+import useLocalNotification from "../../hooks/useLocalNotification";
 import CustomOpacityButton from "../../components/Buttons/CustomOpacityButton";
 import BoldText from "../../components/Texts/BoldText";
 import globalStyles from "../../styles/globalStyles";
-import useDoubleClickExit from "../../hooks/useDoubleClickExit";
 import routes from "../../routes/configs/routes";
-
-Notification.setNotificationHandler({
-    handleNotification: async () => ({
-        shouldShowAlert: true,
-        shouldPlaySound: true,
-        shouldSetBadge: true,
-        priority: 1,
-    }),
-});
 
 export default function WelcomeScreen({ navigation }) {
     //* this hook handle double click for exit app
     useDoubleClickExit();
+    
+    //* give a instance of local notification and first argument is notification listener
+    const notification = useLocalNotification((e) => console.log(e));
 
     return (
         <ImageBackground
@@ -45,9 +39,13 @@ export default function WelcomeScreen({ navigation }) {
                 />
                 <CustomOpacityButton
                     title="ثبت نام"
-                    onPress={() => {
+                    onPress={async () => {
                         navigation.navigate(routes.AUTH.REGISTER_SCREEN);
-                        notificationHandler();
+                        notification({
+                            title: "خوش آمدید!",
+                            body: "به آموزشگاه تاپلرن خوش آمدید، امیدواریم بتوانیم در ادامه مسیر یاری دهنده خوبی برای شما باشیم!",
+                            data: { myData: "http://mehdi-marzban.ir" },
+                        });
                     }}
                     width={"100%"}
                     color={globalStyles.COLORS.MAGENTA_PURPLE}
@@ -56,22 +54,6 @@ export default function WelcomeScreen({ navigation }) {
         </ImageBackground>
     );
 }
-
-const notificationHandler = async () => {
-    await Notification.scheduleNotificationAsync({
-        content: {
-            title: "خوش آمدید!",
-            body: "امیدواریم بتوانیم در ادامه مسیر همراه و یاری دهنده خوبی برای شما باشیم.💓",
-            data: { data: "https://mehdi-marzban.ir" },
-            vibrate: true,
-            badge: 2,
-            sticky: false,
-            color: globalStyles.COLORS.PRIMARY,
-            launchImageName: require("../../assets/logo.png"),
-        },
-        trigger: { seconds: 2 },
-    });
-};
 
 const styles = StyleSheet.create({
     bottomContainer: {

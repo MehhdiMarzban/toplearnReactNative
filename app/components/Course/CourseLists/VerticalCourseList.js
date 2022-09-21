@@ -3,8 +3,8 @@ import { StyleSheet, FlatList } from "react-native";
 import { useToplearnContext } from "../../../hooks/useToplearnContext";
 import { useToplearnNavigation } from "../../../hooks/useTopLearnNavigation";
 import {useRelativeSize} from "../../../hooks/useRelativeSize";
-import Card from "../../Shared/Card";
-import VerticalCardSeparator from "../../Shared/VerticalCardSeparator";
+import Card from "../../shared/Card";
+import VerticalCardSeparator from "../../shared/VerticalCardSeparator";
 
 const VerticalCourseList = ({ data = [] }) => {
     const { handleAddToCart } = useToplearnContext();

@@ -3,7 +3,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 import globalStyles from "../../../styles/globalStyles";
 import BareButton from "../../Buttons/BareButton";
-import Divider from "../../Shared/Divider";
+import Divider from "../../shared/Divider";
 import BoldText from "../../Texts/BoldText";
 
 const CourseListContainer = ({
